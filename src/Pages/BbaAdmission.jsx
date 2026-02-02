@@ -18,15 +18,14 @@ function BbaAdmission() {
       <BbaAdmissionHero />
       <BbaAdmissionPointers />
       <BbaAdmissionTopPlacement />
-      <Recruiter/>
+      <Recruiter />
       <BbaAdmissionOverview />
       <BbaAdmissionCourses />
       <BbaDomainCertifications />
       <BbaAdmissionInfra />
       <BbaAdmissionJoin />
       <BbaAdmissionTestimonials />
-            <BBAAdmissionProcess />
-
+      <BBAAdmissionProcess />
       <BbaAdmissionFAQ />
       {/* <BbaAdmissionFaculty /> */}
     </div>
