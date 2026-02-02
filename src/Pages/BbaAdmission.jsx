@@ -22,10 +22,11 @@ function BbaAdmission() {
       <BbaAdmissionOverview />
       <BbaAdmissionCourses />
       <BbaDomainCertifications />
-      <BBAAdmissionProcess />
       <BbaAdmissionInfra />
       <BbaAdmissionJoin />
       <BbaAdmissionTestimonials />
+            <BBAAdmissionProcess />
+
       <BbaAdmissionFAQ />
       {/* <BbaAdmissionFaculty /> */}
     </div>
