@@ -111,18 +111,33 @@ const TopPlacements = () => {
     <div className="px-4 md:px-16 py-6 bg-gradient-to-r from-[#7A0C1E] via-[#5C1233] to-[#2A0F3F] overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
         {/* LEFT CONTENT */}
-        <div className="md:col-span-2">
-            
+          <div className="md:col-span-2 px-4">
+  <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+    
+    {/* TOP LINE */}
+    <div className="text-white">
+      TOP PLACEMENTS
+    </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            <span className="text-amber-300">TOP PLACEMENTS</span> <br />
-            From Campus <br /> to Corporate
-          </h2>
+    {/* GAP */}
+    <div className="h-3 md:h-4"></div>
 
-          <p className="text-white text-lg md:text-xl">
-            Our students secure top placements with strong industry exposure.
-          </p>
-        </div>
+    {/* SECOND LINE */}
+    <div className="text-white/90 text-2xl md:text-3xl font-semibold">
+      From Campus
+    </div>
+
+    {/* THIRD LINE */}
+    <div className="text-white/80 text-2xl md:text-3xl font-semibold">
+      to Corporate
+    </div>
+
+  </h2>
+
+  <p className="text-white/90 text-lg md:text-xl mt-4">
+    Our students secure top placements with strong industry exposure.
+  </p>
+</div>
 
         {/* RIGHT SLIDER */}
         <div
