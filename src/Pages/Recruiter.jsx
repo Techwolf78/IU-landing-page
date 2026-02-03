@@ -58,7 +58,7 @@ const CompRecruiter = () => {
     logo21,
     logo23,
     logo24,
-    logo25,
+    // logo25,
     logo26,
     logo27,
   ];

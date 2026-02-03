@@ -4,35 +4,28 @@ import { FaArrowDown } from "react-icons/fa";
 /* ---------------- FAQ DATA ---------------- */
 const FAQ_DATA = [
   {
-    question: "Q1. What is the eligibility for BBA admission at Indira University?",
+    question: " What is the eligibility for BBA admission at Indira University?",
     answer: "You need to have passed 10+2 from any recognized board with minimum 45% aggregate. All streams (Commerce, Science, Arts) are eligible.",
   },
   {
-    question: "Q2. Which entrance exams are accepted for BBA admission?",
+    question: " Which entrance exams are accepted for BBA admission?",
     answer: "We accept CUET and conduct our own Indira University Common Entrance Test (IU-CET).",
   },
   {
-    question: "Q3. What is the BBA course fee at Indira University Pune?",
+    question: " What is the BBA course fee at Indira University Pune?",
     answer: "The fee ranges from ₹1.5-3.5 Lakh depending on the programme (General BBA, or Honours), and scholarships are also available.",
   },
   {
-    question: "Q4. What is the average placement package for BBA graduates?",
+    question: " What is the average placement package for BBA graduates?",
     answer: "The average package is ₹6 LPA with highest going up to ₹9 LPA.",
   },
   {
-    question: "Q5. Can I pursue MBA after BBA from Indira University?",
+    question: " Can I pursue MBA after BBA from Indira University?",
     answer: "Yes! Our BBA graduates have been placed in top B-schools including and international universities.",
   },
+  
   {
-    question: "Q6. Are hostel facilities available?",
-    answer: "Yes, we provide separate air-conditioned hostels for boys and girls with WiFi, mess, gym, and 24/7 security.",
-  },
-  {
-    question: "Q7. What specializations are offered in BBA?",
-    answer: "We offer multiple specializations such as Marketing management, Financial Management, HR, Digital Marketing, Banking and Financial Services, International Business Management, Logistics and Supply Chain & Operation, Innovation and Entrepreneurship. ",
-  },
-  {
-    question: "Q8. Is work experience required for BBA admission?",
+    question: " Is work experience required for BBA admission?",
     answer: "No, BBA is an undergraduate programme for students directly after 12th. No work experience is required.",
   },
 ];
@@ -118,7 +111,7 @@ function BbaAdmissionFAQ() {
         </div>
 
         {/* 3 Column Grid for FAQ Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {FAQ_DATA.map((item, index) => (
             <AccordionItem
               key={index}
