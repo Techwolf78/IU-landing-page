@@ -8,22 +8,25 @@ const data = [
     id: 1,
     title: "Events",
     description:
-      "Experience exciting Annual Fest with diverse cultural activities, concerts, Industry Events including corporate conclaves, executive talks, placement drives, and workshops on leadership, industry readiness, skill development, and Cultural Celebrations featuring festivals, talent shows, fresher's induction, farewell parties, and sports tournaments that create well-rounded BBA professionals. ",
+      "Experience exciting Annual Fest with diverse cultural activities, concerts, Industry Events including corporate conclaves, executive talks, placement drives, and workshops on leadership, industry readiness, skill development, and Cultural Celebrations featuring festivals, talent shows, fresher's induction, farewell parties, and sports tournaments that create well-rounded BBA professionals.",
     image: img2,
+    contentSide: "left", // First: content left, image right
   },
   {
     id: 2,
     title: "Facilities",
     description:
-      "Smart classrooms, computer labs, library with e-resources, Innovation and Entrepreneurship Center for startups, AC hostels with Wi-Fi, cafeteria, sports complex, gymnasium, medical center, placement cell, and modern auditorium for comprehensive BBA education in Pune. ",
+      "Smart classrooms, computer labs, library with e-resources, Innovation and Entrepreneurship Center for startups, AC hostels with Wi-Fi, cafeteria, sports complex, gymnasium, medical center, placement cell, and modern auditorium for comprehensive BBA education in Pune.",
     image: img3,
+    contentSide: "right", // Second: content right, image left
   },
   {
     id: 3,
     title: "Student Clubs",
     description:
-      "Marketing Club, Finance Club, HR Club, Digital Marketing Club, Innovation & Entrepreneurship Club, International Business Club, Current Affairs Club, IT Club, Sync Cultural Club, Music Club, Media Club and many more; these clubs  offer leadership opportunities, industry networking, skill development, and resume-building experience for BBA students. ",
+      "Marketing Club, Finance Club, HR Club, Digital Marketing Club, Innovation & Entrepreneurship Club, International Business Club, Current Affairs Club, IT Club, Sync Cultural Club, Music Club, Media Club and many more; these clubs offer leadership opportunities, industry networking, skill development, and resume-building experience for BBA students.",
     image: img1,
+    contentSide: "left", // Third: content left, image right
   },
 ];
 
@@ -225,55 +228,80 @@ export default function CampusFacilities() {
     >
       {/* Sticky container that stays in view */}
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-        {/* Background images inside sticky container */}
-        <div className="absolute inset-0">
-          {data.map((item, index) => (
-            <div
-              key={item.id}
-              className={`absolute inset-0 transition-all duration-700 ease-out ${
-                activeIndex === index
-                  ? "opacity-80 z-10"
-                  : "opacity-0 pointer-events-none"
-              }`}
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover"
-              />
-              {/* Overlay for better text visibility */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#990000]/40 via-[#011E5A]/70 to-[#051D58]/40" />
-            </div>
-          ))}
-        </div>
-
         {/* Content Container - Inside sticky div */}
-        <div className="relative container mx-auto px-4 lg:px-8 z-20">
-          <div className="max-w-6xl mx-auto">
+        <div className="relative container mx-auto px-4 lg:px-8 z-20 w-full">
+          <div className="max-w-7xl mx-auto">
             {data.map((item, index) => (
               <div
                 key={item.id}
-                className={`transition-all duration-700 ease-out text-center ${
+                className={`transition-all duration-700 ease-out ${
                   activeIndex === index
-                    ? "opacity-100 translate-y-0"
+                    ? "opacity-100"
                     : "opacity-0 absolute inset-x-0 pointer-events-none"
                 }`}
               >
-                <div className="mb-8">
-                  <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black text-sm font-semibold rounded-full mb-4">
-                    Campus Highlights
-                  </span>
+                <div className="flex flex-col lg:flex-row items-center justify-between min-h-[70vh]">
+                  {/* Content Section */}
+                  <div
+                    className={`w-full lg:w-5/12 mb-10 lg:mb-0 ${
+                      item.contentSide === "left"
+                        ? "lg:order-1"
+                        : "lg:order-2"
+                    }`}
+                  >
+                    <div className="max-w-xl">
+                      <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black text-sm font-semibold rounded-full mb-4">
+                        Campus Highlights
+                      </span>
 
-                  <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
-                    {item.title}
-                  </h2>
+                      <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
+                        {item.title}
+                      </h2>
 
-                  <div className="w-24 h-1 bg-gradient-to-r from-[#FCC409] to-[#FFD700] mx-auto mb-8"></div>
+                      <div
+                        className={`w-24 h-1 bg-gradient-to-r from-[#FCC409] to-[#FFD700] mb-8 ${
+                          item.contentSide === "left"
+                            ? "lg:mr-auto"
+                            : "lg:ml-auto"
+                        }`}
+                      ></div>
 
-                  <div className="max-w-3xl mx-auto">
-                    <p className="text-lg md:text-xl text-white/90 leading-relaxed">
-                      {item.description}
-                    </p>
+                      <div className="max-w-2xl">
+                        <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Image Section */}
+                  <div
+                    className={`w-full lg:w-6/12 ${
+                      item.contentSide === "left"
+                        ? "lg:order-2"
+                        : "lg:order-1"
+                    }`}
+                  >
+                    <div className="relative">
+                      <div className="relative overflow-hidden  shadow-2xl transform transition-transform duration-700 ease-out hover:scale-[1.02]">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-[400px] lg:h-[500px] object-cover"
+                        />
+                        {/* Gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                      </div>
+                      
+                      {/* Decorative element */}
+                      <div
+                        className={`absolute -z-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#FCC409]/20 to-[#FFD700]/10 blur-3xl ${
+                          item.contentSide === "left"
+                            ? "-left-10 -top-10"
+                            : "-right-10 -top-10"
+                        }`}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

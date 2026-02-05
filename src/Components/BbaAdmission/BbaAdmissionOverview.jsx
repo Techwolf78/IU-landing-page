@@ -89,9 +89,9 @@ function BbaAdmissionOverview() {
           </p>
 
           <p className="text-base md:text-lg text-gray-700 md:text-gray-200 leading-relaxed">
-            Designed for aspiring business leaders, entrepreneurs, and
+            Designed for aspiring students, entrepreneurs, and
             management professionals, our BBA course after 12th provides the
-            perfect foundation for MBA aspirants and corporate careers.
+            perfect foundation for future.
           </p>
         </div>
 

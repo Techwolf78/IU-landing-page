@@ -176,8 +176,9 @@ const CompRecruiter = () => {
         <p className="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl 
                      max-w-2xl sm:max-w-3xl md:max-w-4xl mx-auto
                      px-2 sm:px-4 md:px-6 lg:px-8">
-          Three decades of excellence, thousands of successful careers, and a
-          proven track record of transforming students into business leaders.
+      Join a legacy where industry giants meet tomorrow’s talent, proving
+          that an Indira University's BBA secures your future at the top
+          companies.
         </p>
       </div>
 
