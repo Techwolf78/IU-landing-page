@@ -13,7 +13,7 @@ const FAQ_DATA = [
   },
   {
     question: " What is the BBA course fee at Indira University Pune?",
-    answer: "The fee ranges from ₹1.5-3.5 Lakh depending on the programme (General BBA, or Honours), and scholarships are also available.",
+    answer: "The total fee for the BBA programme is ₹1.5 Lakh, and scholarships are also available.",
   },
   {
     question: " What is the average placement package for BBA graduates?",
