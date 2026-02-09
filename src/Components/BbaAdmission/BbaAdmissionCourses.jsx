@@ -13,6 +13,16 @@ import bankingImage from "../../assets/six.jpg";
 import digitalMarketingImage from "../../assets/sev.jpg";
 import innovationImage from "../../assets/eight.jpg";
 
+import logo1 from "../../assets/Images/bba-logo/2.jpg";
+import logo2 from "../../assets/Images/bba-logo/2.jpg";
+import logo3 from "../../assets/Images/bba-logo/2.jpg";
+import logo4 from "../../assets/Images/bba-logo/2.jpg";
+import logo5 from "../../assets/Images/bba-logo/2.jpg";
+import logo6 from "../../assets/Images/bba-logo/2.jpg";
+import logo7 from "../../assets/Images/bba-logo/2.jpg";
+import logo8 from "../../assets/Images/bba-logo/2.jpg";
+import logo9 from "../../assets/Images/bba-logo/2.jpg";
+import logo10 from "../../assets/Images/bba-logo/2.jpg";
 // MUI
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -180,6 +190,10 @@ function BbaAdmissionCourses() {
   const [open, setOpen] = useState(false);
 
   const current = specializations[selectedIndex];
+const logos = [
+  logo1, logo2, logo3, logo4, logo5,
+  logo6, logo7, logo8, logo9, logo10,
+];
 
   return (
     <motion.div className="px-4 sm:px-8 md:px-16 py-12 bg-white poppins-regular">
@@ -241,26 +255,39 @@ function BbaAdmissionCourses() {
                 {current.description}
               </p>
 
-              <div className="grid lg:grid-cols-2 gap-8 mb-10">
-                <div>
-                  <h4 className="font-semibold mb-4 text-[#b1124a]">
-                    Career Opportunities
-                  </h4>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {current.careerOutcomes.map((c, i) => (
-                      <li key={i} className="flex gap-2">
-                        ✔ {c}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+         <div className="mb-10">
+  {/* CAREER OPPORTUNITIES – TOP */}
+  <div className="mb-8">
+    <h4 className="font-semibold mb-4 text-[#b1124a]">
+      Career Opportunities
+    </h4>
 
-                <img
-                  src={current.image}
-                  alt={current.name}
-                  className="w-full h-56 sm:h-64 object-contain"
-                />
-              </div>
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+      {current.careerOutcomes.map((c, i) => (
+        <li key={i} className="flex gap-2 items-center">
+          ✔ {c}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  {/* LOGOS SECTION – BOTTOM */}
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center">
+    {logos.map((logo, index) => (
+      <div
+        key={index}
+        className="flex justify-center items-center"
+      >
+        <img
+          src={logo}
+          alt={`logo-${index}`}
+          className="h-14 object-contain  hover:grayscale-0 transition"
+        />
+      </div>
+    ))}
+  </div>
+</div>
+
 
               <button
                 onClick={() => setOpen(true)}

@@ -16,16 +16,16 @@ function BbaAdmission() {
   return (
     <div>
       <BbaAdmissionHero />
-            <BbaAdmissionTopPlacement />
-
+      <BbaAdmissionTopPlacement />
       <BbaAdmissionPointers />
       <Recruiter />
       <BbaAdmissionOverview />
       <BbaAdmissionCourses />
       <BbaDomainCertifications />
       <BbaAdmissionInfra />
-      <BbaAdmissionJoin />
+     
       <BbaAdmissionTestimonials />
+       <BbaAdmissionJoin />
       <BBAAdmissionProcess />
       <BbaAdmissionFAQ />
       {/* <BbaAdmissionFaculty /> */}

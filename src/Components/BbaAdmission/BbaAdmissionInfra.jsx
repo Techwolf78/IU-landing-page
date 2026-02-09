@@ -456,23 +456,6 @@ export default function CampusFacilities() {
         </div>
       </div>
 
-      {/* Scroll hint - Desktop */}
-      <div
-        className={`hidden lg:block fixed bottom-6 left-1/2 transform -translate-x-1/2 z-20 transition-all duration-300 flex flex-col items-center ${
-          activeIndex === data.length - 1
-            ? "opacity-0 pointer-events-none"
-            : "opacity-100"
-        }`}
-      >
-        <div className="flex flex-col items-center">
-          <span className="text-white/70 text-sm mb-2 animate-pulse">
-            Scroll down
-          </span>
-          <div className="w-7 h-12 xl:w-8 xl:h-14 border-2 border-white/30 rounded-full flex justify-center relative">
-            <div className="w-1.5 h-4 xl:w-1.5 xl:h-4 bg-gradient-to-b from-[#FCC409] to-[#FFD700] rounded-full mt-3 animate-bounce" />
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
