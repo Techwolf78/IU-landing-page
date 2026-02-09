@@ -1,11 +1,11 @@
 import { useEffect, useState, useRef } from "react";
-import img1 from "../../assets/club.jpg";
-import img2 from "../../assets/Event.jpg";
-import img3 from "../../assets/Facilities.jpg";
-import img4 from "../../assets/Event.jpg";
-import img5 from "../../assets/Event.jpg";
-import img6 from "../../assets/Event.jpg";
-import { Link } from 'react-scroll';
+import img1 from "../../assets/event2.jpg";
+import img2 from "../../assets/event3.jpg";
+import img3 from "../../assets/event5.jpg";
+import img4 from "../../assets/event4.jpg";
+import img5 from "../../assets/event1.jpg";
+
+import { Link } from "react-scroll";
 
 const data = [
   {
@@ -21,7 +21,7 @@ const data = [
     title: "Facilities",
     description:
       "Smart classrooms, computer labs, library with e-resources, Innovation and Entrepreneurship Center for startups, AC hostels with Wi-Fi, cafeteria, sports complex, gymnasium, medical center, placement cell, and modern auditorium for comprehensive BBA education in Pune.",
-    images: [img2, img3, img4, img5, img6], // 5 images for 2-1-2 pattern
+    images: [img2, img3, img4, img5, img1], // 5 images for 2-1-2 pattern
     contentSide: "left", // Second: content right, image left
   },
   {
@@ -29,7 +29,7 @@ const data = [
     title: "Student Clubs",
     description:
       "Marketing Club, Finance Club, HR Club, Digital Marketing Club, Innovation & Entrepreneurship Club, International Business Club, Current Affairs Club, IT Club, Sync Cultural Club, Music Club, Media Club and many more; these clubs offer leadership opportunities, industry networking, skill development, and resume-building experience for BBA students.",
-    images: [img3, img4, img5, img6, img1], // 5 images for 2-1-2 pattern
+    images: [img3, img4, img5, img2, img1], // 5 images for 2-1-2 pattern
     contentSide: "left", // Third: content left, image right
   },
 ];
@@ -82,7 +82,7 @@ export default function CampusFacilities() {
         const scrollProgress = -rect.top / rect.height;
         const newIndex = Math.min(
           data.length - 1,
-          Math.max(0, Math.floor(scrollProgress * data.length))
+          Math.max(0, Math.floor(scrollProgress * data.length)),
         );
 
         if (newIndex !== activeIndex) {
@@ -227,7 +227,7 @@ export default function CampusFacilities() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[100vh] bg-gradient-to-r from-[#990000] via-[#011E5A] to-[#051D58]"
+      className="relative min-h-[100vh] bg-gradient-to-r from-[#990000] via-[#011E5A] to-[#051D58] py-10"
       style={{ height: `${data.length * 100}vh` }}
     >
       {/* Sticky container that stays in view */}
@@ -245,12 +245,11 @@ export default function CampusFacilities() {
                 }`}
               >
                 <div className="flex flex-col lg:flex-row items-center justify-between min-h-[70vh] gap-8 md:gap-12">
-                  
                   {/* Content Section - Mobile First: Full width, Desktop: 5/12 */}
                   <div className="w-full lg:w-5/12 order-1 lg:order-1">
                     <div className="max-w-xl mx-auto lg:mx-0">
                       {/* Badge */}
-                      <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black text-sm font-semibold rounded-full mb-4 md:mb-6 shadow-lg">
+                      <span className=" inline-block px-4 py-1.5 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black text-sm font-semibold rounded-full mb-4 md:mb-6 shadow-lg">
                         Campus Highlights
                       </span>
 
@@ -267,7 +266,7 @@ export default function CampusFacilities() {
                         <p className="text-base sm:text-lg text-white/90 leading-relaxed mb-5 md:mb-6">
                           {item.description}
                         </p>
-                        
+
                         {/* Features list - Mobile: smaller, Desktop: normal */}
                         {/* <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 md:mb-8">
                           {item.id === 1 && (
@@ -292,14 +291,16 @@ export default function CampusFacilities() {
                             </>
                           )}
                         </div> */}
-                        
+
                         {/* Button */}
-                     <button 
-  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-  className="w-full sm:w-auto px-5 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black font-semibold rounded-lg hover:scale-105 active:scale-95 transition-transform duration-300 shadow-lg text-sm sm:text-base cursor-pointer"
->
-  Learn More
-</button>
+                        <button
+                          onClick={() =>
+                            window.scrollTo({ top: 0, behavior: "smooth" })
+                          }
+                          className="w-full sm:w-auto px-5 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black font-semibold rounded-lg hover:scale-105 active:scale-95 transition-transform duration-300 shadow-lg text-sm sm:text-base cursor-pointer"
+                        >
+                          Learn More
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -307,7 +308,6 @@ export default function CampusFacilities() {
                   {/* Image Grid Section - Mobile First: Full width, Desktop: 7/12 */}
                   <div className="w-full lg:w-7/12 order-2 lg:order-2">
                     <div className="relative h-[500px] sm:h-[550px] md:h-[600px] lg:h-[650px] w-full">
-                      
                       {/* Top Row - 2 Images */}
                       <div className="flex gap-3 sm:gap-4 mb-3 sm:mb-4">
                         {/* Image 1 */}
@@ -315,11 +315,11 @@ export default function CampusFacilities() {
                           <img
                             src={item.images[0]}
                             alt={`${item.title} 1`}
-                            className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                            className="w-full h-full object-container transform transition-transform duration-500 group-hover:scale-110"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </div>
-                        
+
                         {/* Image 2 */}
                         <div className="relative w-1/2 h-40 sm:h-44 md:h-48 overflow-hidden rounded-lg sm:rounded-xl shadow-lg group">
                           <img
@@ -339,9 +339,7 @@ export default function CampusFacilities() {
                           className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                        <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 text-white font-semibold text-sm sm:text-base md:text-lg">
-                          Featured Image
-                        </div>
+                      
                       </div>
 
                       {/* Bottom Row - 2 Images */}
@@ -351,11 +349,11 @@ export default function CampusFacilities() {
                           <img
                             src={item.images[3]}
                             alt={`${item.title} 4`}
-                            className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                            className="w-full h-full object-container transform transition-transform duration-500 group-hover:scale-110"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </div>
-                        
+
                         {/* Image 5 */}
                         <div className="relative w-1/2 h-40 sm:h-44 md:h-48 overflow-hidden rounded-lg sm:rounded-xl shadow-lg group">
                           <img
@@ -423,7 +421,9 @@ export default function CampusFacilities() {
             <span className="text-white/60 mx-1 xl:mx-2">/</span>
             <span className="text-base xl:text-lg">{data.length}</span>
           </div>
-          <div className="text-white/60 text-xs xl:text-sm mt-0.5">Campus Features</div>
+          <div className="text-white/60 text-xs xl:text-sm mt-0.5">
+            Campus Features
+          </div>
         </div>
 
         {/* Mobile Section Counter - Top Right */}
@@ -455,7 +455,6 @@ export default function CampusFacilities() {
           </div>
         </div>
       </div>
-
     </section>
   );
 }
