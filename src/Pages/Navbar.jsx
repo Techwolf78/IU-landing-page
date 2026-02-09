@@ -70,7 +70,7 @@ function Navbar() {
             {/* CENTER TEXT */}
             <div className="flex-grow flex items-center justify-center text-center px-2 md:px-4">
               <h1 className="text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold animate-pulseText whitespace-nowrap">
-                INDIRA UNIVERSITY SCHOOL OF BUSINESS
+                SCHOOL OF BUSINESS (INDIRA UNIVERSITY)
               </h1>
             </div>
 

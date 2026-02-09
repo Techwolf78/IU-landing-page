@@ -16,8 +16,9 @@ function BbaAdmission() {
   return (
     <div>
       <BbaAdmissionHero />
+            <BbaAdmissionTopPlacement />
+
       <BbaAdmissionPointers />
-      <BbaAdmissionTopPlacement />
       <Recruiter />
       <BbaAdmissionOverview />
       <BbaAdmissionCourses />
