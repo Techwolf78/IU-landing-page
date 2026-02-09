@@ -252,10 +252,10 @@ export default function CampusFacilities() {
                   : "opacity-0 invisible absolute inset-x-0 pointer-events-none"
               }`}
             >
-              <div className="flex flex-col lg:flex-row items-center justify-between min-h-[70vh] gap-6 md:gap-8 lg:gap-12">
+              <div className="flex flex-col lg:flex-row items-center justify-between min-h-[70vh] gap-2 md:gap-2">
                 {/* Content Section */}
                 <div
-                  className={`w-full lg:w-5/12 order-1 ${
+                  className={`w-full lg:w-5/11 order-1 ${
                     item.contentSide === "right" ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
@@ -294,7 +294,7 @@ export default function CampusFacilities() {
 
                 {/* Image Grid Section */}
                 <div
-                  className={`w-full lg:w-7/12 order-2 ${
+                  className={`w-full lg:w-7/14 order-2 ${
                     item.contentSide === "right" ? "lg:order-1" : "lg:order-2"
                   }`}
                 >

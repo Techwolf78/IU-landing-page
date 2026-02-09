@@ -262,7 +262,7 @@ const logos = [
       Career Opportunities
     </h4>
 
-    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+    <ul className="grid grid-cols-2 sm:grid-cols-2 gap-2">
       {current.careerOutcomes.map((c, i) => (
         <li key={i} className="flex gap-2 items-center">
           ✔ {c}
@@ -270,9 +270,12 @@ const logos = [
       ))}
     </ul>
   </div>
-
+ <h4 className="font-semibold mb-4 text-[#b1124a]">
+      Top Recruiters 
+    </h4>
   {/* LOGOS SECTION – BOTTOM */}
   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center">
+    
     {logos.map((logo, index) => (
       <div
         key={index}
