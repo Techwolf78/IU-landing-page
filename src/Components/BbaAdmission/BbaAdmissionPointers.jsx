@@ -50,17 +50,17 @@ function MarketingManagementPointers() {
         {POINTERS_DATA.map(({ id, title, value, icon: Icon }) => (
           <div
             key={id}
-            className="bg-[#F6FBFF] p-3 md:p-5 shadow-md flex flex-col items-center justify-center
+            className="bg-gradient-to-r from-[#990000] via-[#011E5A] to-[#051D58]  p-3 md:p-5 shadow-md flex flex-col items-center justify-center
                        transition-all duration-300 ease-in-out
                        hover:scale-105 hover:shadow-2xl hover:bg-[#E9F7FA]"
           >
-            <Icon size={30} className="text-[#790D20]" />
+            <Icon size={30} className="text-white" />
 
-            <h2 className=" text-xl md:text-xl font-semibold mt-2 text-center">
+            <h2 className="text-white text-xl md:text-xl font-semibold mt-2 text-center">
               {title}
             </h2>
 
-            <p className=" text-xl md:text-xl text-center mt-1">
+            <p className="text-white text-xl md:text-xl text-center mt-1">
               {value}
             </p>
           </div>

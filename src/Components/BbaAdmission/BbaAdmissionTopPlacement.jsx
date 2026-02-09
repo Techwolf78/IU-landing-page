@@ -108,14 +108,14 @@ const TopPlacements = () => {
   }, [isHovered]);
 
   return (
-    <div className="px-4 md:px-16 py-6 bg-gradient-to-r from-[#7A0C1E] via-[#5C1233] to-[#2A0F3F] overflow-hidden">
+    <div className="px-4 md:px-16 py-6 bg-[#F6FBFF] overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
         {/* LEFT CONTENT */}
           <div className="md:col-span-2 px-4">
   <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
     
     {/* TOP LINE */}
-    <div className="text-white">
+    <div className="text-black">
       TOP PLACEMENTS
     </div>
 
@@ -123,18 +123,18 @@ const TopPlacements = () => {
     <div className="h-3 md:h-4"></div>
 
     {/* SECOND LINE */}
-    <div className="text-white/90 text-2xl md:text-3xl font-semibold">
+    <div className="text-black/90 text-2xl md:text-3xl font-semibold">
       From Campus
     </div>
 
     {/* THIRD LINE */}
-    <div className="text-white/80 text-2xl md:text-3xl font-semibold">
+    <div className="text-black/80 text-2xl md:text-3xl font-semibold">
       to Corporate
     </div>
 
   </h2>
 
-  <p className="text-white/90 text-lg md:text-xl mt-4">
+  <p className="text-black/90 text-lg md:text-xl mt-4">
     Our students secure top placements with strong industry exposure.
   </p>
 </div>
@@ -166,7 +166,7 @@ const TopPlacements = () => {
                       className="
                         w-full h-full object-cover md:object-cover 
                         transition-transform duration-500
-                        group-hover:scale-110 object-top 
+                        group-hover:scale-110 object-top bg-gradient-to-r from-[#990000] via-[#011E5A] to-[#051D58] 
                       "
                     />
 
@@ -178,7 +178,7 @@ const TopPlacements = () => {
 
                   {/* NAME + COMPANY (FIXED BELOW IMAGE, LEFT) */}
                   <div className="pt-3 text-center">
-                    <h3 className="text-lg md:text-xl font-semibold text-white">
+                    <h3 className="text-lg md:text-md font-semibold text-black">
                       {student.name}
                     </h3>
                     <p className="text-lg md:text-xl text-white bg-[#011E5A]">

@@ -37,19 +37,24 @@ const DomainCertifications = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-gradient-to-r from-[#7A0C1E] via-[#5C1233] to-[#2A0F3F]
-      px-4 sm:px-6 md:px-12 lg:px-20 py-12 md:py-16 relative overflow-hidden"
+      className="w-full bg-gray-50   py-12 md:py-16 relative overflow-hidden"
     >
-      {/* Logo */}
-      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 lg:top-10 lg:right-10
-        w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 opacity-90">
+      {/* LOGO */}
+      <div className="absolute top-13 right-4 sm:top-6 sm:right-6 lg:top-20 lg:right-10
+        w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 opacity-90 z-20">
         <img src={logo} alt="Logo" className="w-full h-full object-contain" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
-        <div className="text-center mb-10 md:mb-16">
-          <span className="inline-block px-4 py-1.5 bg-white/10 text-white text-xs sm:text-sm font-semibold rounded-full border border-white/20 mb-4">
+        {/* ================= HEADER (GRADIENT ONLY HERE) ================= */}
+        <div
+          className="text-center mb-10 md:mb-16
+          bg-gradient-to-r from-[#7A0C1E] via-[#5C1233] to-[#2A0F3F]
+          py-10 md:py-14  "
+        >
+          <span className="inline-block px-4 py-1.5 bg-white/10 text-white
+            text-xs sm:text-sm font-semibold rounded-full
+            border border-white/20 mb-4">
             CERTIFICATION PROGRAMMES
           </span>
 
@@ -64,48 +69,66 @@ const DomainCertifications = () => {
           </p>
         </div>
 
-        {/* First 8 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        {/* ================= FIRST 8 CARDS ================= */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4">
           {certifications.slice(0, 8).map((cert, index) => (
             <div
               key={cert.id}
-              className={`group relative bg-white border border-gray-200 rounded-full
-              hover:border-yellow-400 hover:shadow-xl transition-all duration-300
-              flex items-center justify-center text-center p-4 min-h-[90px]
+              className={`group relative rounded-full p-[2px]
+              bg-gradient-to-r from-[#7A0C1E] via-[#5C1233] to-[#2A0F3F]
+              hover:shadow-2xl transition-all duration-300
               ${inView ? "animate-slide-in-right" : "opacity-0 translate-x-16"}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <h3 className="text-sm sm:text-base font-semibold text-gray-800
-                group-hover:text-purple-700 transition-colors">
-                {cert.title}
-              </h3>
+              <div
+                className=" rounded-full w-full h-full
+                flex items-center justify-center text-center
+                p-4 min-h-[90px]
+                group-hover:scale-[1.03] transition-transform"
+              >
+                <h3
+                  className="text-sm sm:text-base font-semibold text-white
+                 "
+                >
+                  {cert.title}
+                </h3>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Last 3 */}
-        <div className="flex justify-center mt-4 md:mt-10">
+        {/* ================= LAST 3 CARDS ================= */}
+        <div className="flex justify-center mt-6 md:mt-10 px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-4xl w-full">
             {certifications.slice(8).map((cert, index) => (
               <div
                 key={cert.id}
-                className={`group relative bg-white border border-gray-200 rounded-full
-                hover:border-yellow-400 hover:shadow-xl transition-all duration-300
-                flex items-center justify-center text-center p-4 min-h-[80px]
+                className={`group relative rounded-full p-[2px]
+                bg-gradient-to-r from-[#7A0C1E] via-[#5C1233] to-[#2A0F3F]
+                hover:shadow-2xl transition-all duration-300
                 ${inView ? "animate-slide-in-right" : "opacity-0 translate-x-16"}`}
                 style={{ animationDelay: `${(index + 8) * 0.1}s` }}
               >
-                <h3 className="text-sm sm:text-base font-semibold text-gray-800
-                  group-hover:text-purple-700 transition-colors">
-                  {cert.title}
-                </h3>
+                <div
+                  className=" rounded-full w-full h-full
+                  flex items-center justify-center text-center
+                  p-4 min-h-[80px]
+                  group-hover:scale-[1.03] transition-transform"
+                >
+                  <h3
+                    className="text-sm sm:text-base font-semibold text-white
+                    "
+                  >
+                    {cert.title}
+                  </h3>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Animations */}
+      {/* ================= ANIMATIONS ================= */}
       <style jsx>{`
         @keyframes slideInRight {
           from {
