@@ -323,11 +323,11 @@ export default function CampusFacilities() {
                     </div>
 
                     {/* Middle Row - 1 Big Image */}
-                    <div className="relative h-40 sm:h-44 md:h-48 lg:h-52 xl:h-56 mb-2 sm:mb-3 md:mb-4 overflow-hidden rounded-lg md:rounded-xl lg:rounded-2xl shadow-lg sm:shadow-xl group">
+                    <div className="relative h-40 sm:h-44 md:h-60 mb-2 sm:mb-3 md:mb-4 overflow-hidden rounded-lg md:rounded-xl lg:rounded-2xl shadow-lg sm:shadow-xl group">
                       <img
                         src={item.images[2]}
                         alt={`${item.title} 3`}
-                        className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-full object-container transform transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                     </div>
