@@ -403,16 +403,8 @@ export default function CampusFacilities() {
 
         {/* Section Counter - Desktop Only */}
         <div className="hidden lg:block absolute top-4 xl:top-8 2xl:top-12 left-4 xl:left-8 2xl:left-12 z-30">
-          <div className="text-white/80">
-            <span className="text-xl xl:text-2xl 2xl:text-3xl font-bold text-[#FCC409]">
-              {activeIndex + 1}
-            </span>
-            <span className="text-white/60 mx-1 xl:mx-2 2xl:mx-3">/</span>
-            <span className="text-sm xl:text-base 2xl:text-lg">{data.length}</span>
-          </div>
-          <div className="text-white/60 text-xs xl:text-sm 2xl:text-base mt-0.5">
-            Campus Features
-          </div>
+          
+         
         </div>
 
         {/* Mobile & Tablet Section Counter */}
