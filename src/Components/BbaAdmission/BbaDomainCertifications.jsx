@@ -37,7 +37,7 @@ const DomainCertifications = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-gray-50   py-12 md:py-16 relative overflow-hidden"
+      className="w-full bg-gray-50   py-12 md:py-16 relative "
     >
       {/* LOGO */}
       <div className="absolute top-13 right-4 sm:top-6 sm:right-6 lg:top-20 lg:right-10
@@ -45,10 +45,10 @@ const DomainCertifications = () => {
         <img src={logo} alt="Logo" className="w-full h-full object-contain" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="w-full mx-auto relative z-10">
         {/* ================= HEADER (GRADIENT ONLY HERE) ================= */}
         <div
-          className="text-center mb-10 md:mb-16
+          className="w-full text-center mb-10 md:mb-16
           bg-gradient-to-r from-[#7A0C1E] via-[#5C1233] to-[#2A0F3F]
           py-10 md:py-14  "
         >
