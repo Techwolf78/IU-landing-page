@@ -13,16 +13,58 @@ import bankingImage from "../../assets/six.jpg";
 import digitalMarketingImage from "../../assets/sev.jpg";
 import innovationImage from "../../assets/eight.jpg";
 
-import logo1 from "../../assets/Images/bba-logo/2.jpg";
-import logo2 from "../../assets/Images/bba-logo/2.jpg";
-import logo3 from "../../assets/Images/bba-logo/2.jpg";
-import logo4 from "../../assets/Images/bba-logo/2.jpg";
-import logo5 from "../../assets/Images/bba-logo/2.jpg";
-import logo6 from "../../assets/Images/bba-logo/2.jpg";
-import logo7 from "../../assets/Images/bba-logo/2.jpg";
-import logo8 from "../../assets/Images/bba-logo/2.jpg";
-import logo9 from "../../assets/Images/bba-logo/2.jpg";
-import logo10 from "../../assets/Images/bba-logo/2.jpg";
+// Logos
+import logo1 from "../../assets/BBA – Marketing/logo/1.jpg";
+import logo2 from "../../assets/BBA – Marketing/logo/2.jpg";
+import logo3 from "../../assets/BBA – Marketing/logo/3.jpg";
+import logo4 from "../../assets/BBA – Marketing/logo/4.jpg";
+import logo5 from "../../assets/BBA – Marketing/logo/5.jpg";
+import logo6 from "../../assets/BBA – Marketing/logo/6.jpg";
+import logo7 from "../../assets/BBA – Marketing/logo/7.jpg";
+import logo8 from "../../assets/BBA – Marketing/logo/8.jpg";
+import logo9 from "../../assets/BBA – Marketing/logo/9.jpg";
+import logo10 from "../../assets/BBA – Marketing/logo/10.jpg";
+import logo11 from "../../assets/BBA – Finance/logo/1.jpg";
+import logo12 from "../../assets/BBA – Finance/logo/2.jpg";
+import logo13 from "../../assets/BBA – Finance/logo/3.jpg";
+import logo14 from "../../assets/BBA – Finance/logo/4.jpg";
+import logo15 from "../../assets/BBA – Finance/logo/5.jpg";
+import logo16 from "../../assets/BBA – Finance/logo/6.jpg";
+import logo17 from "../../assets/BBA – Finance/logo/7.jpg";
+import logo18 from "../../assets/BBA – Finance/logo/8.jpg";
+import logo19 from "../../assets/BBA – Finance/logo/9.jpg";
+import logo20 from "../../assets/BBA – Finance/logo/10.jpg";
+import logo21 from "../../assets/BBA International Business/logo/1.jpg"
+import logo22 from "../../assets/BBA International Business/logo/2.jpg"
+import logo23 from "../../assets/BBA International Business/logo/3.jpg"
+import logo24 from "../../assets/BBA International Business/logo/4.jpg"
+import logo25 from "../../assets/BBA International Business/logo/5.jpg"
+import logo26 from "../../assets/BBA International Business/logo/6.jpg"
+import logo27 from "../../assets/BBA International Business/logo/7.jpg"
+import logo28 from "../../assets/BBA International Business/logo/8.jpg"
+import logo29 from "../../assets/BBA International Business/logo/9.jpg"
+import logo30 from "../../assets/BBA International Business/logo/10.jpg"
+import logo31 from "../../assets/BBA HR/logo/1.jpg";
+import logo32 from "../../assets/BBA HR/logo/2.jpg";
+import logo33 from "../../assets/BBA HR/logo/3.jpg";
+import logo34 from "../../assets/BBA HR/logo/4.jpg";
+import logo35 from "../../assets/BBA HR/logo/5.jpg";
+import logo36 from "../../assets/BBA HR/logo/6.jpg";
+import logo37 from "../../assets/BBA HR/logo/7.jpg";
+import logo38 from "../../assets/BBA HR/logo/8.jpg";
+import logo39 from "../../assets/BBA HR/logo/9.jpg";
+import logo40 from "../../assets/BBA HR/logo/10.jpg";
+
+import logo41 from "../../assets/BBA Logistics & Supply Chain Management/logo/1.jpg";
+import logo42 from "../../assets/BBA Logistics & Supply Chain Management/logo/2.jpg";
+import logo43 from "../../assets/BBA Logistics & Supply Chain Management/logo/3.jpg";
+import logo44 from "../../assets/BBA Logistics & Supply Chain Management/logo/4.jpg";
+import logo45 from "../../assets/BBA Logistics & Supply Chain Management/logo/5.jpg";
+import logo46 from "../../assets/BBA Logistics & Supply Chain Management/logo/6.jpg";
+import logo47 from "../../assets/BBA Logistics & Supply Chain Management/logo/7.jpg";
+import logo48 from "../../assets/BBA Logistics & Supply Chain Management/logo/8.jpg";
+import logo49 from "../../assets/BBA Logistics & Supply Chain Management/logo/9.jpg";
+import logo50 from "../../assets/BBA Logistics & Supply Chain Management/logo/10.jpg";
 // MUI
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -42,138 +84,6 @@ const modalStyle = {
   borderRadius: "12px",
 };
 
-const specializations = [
-  {
-    name: "Marketing Management",
-    duration: "3 Years",
-    fees: "₹1,50,000/year",
-    image: marketingImage,
-    description:
-      "Develop expertise in digital marketing strategies, brand management, consumer behavior, and market research. This marketing degree programme covers sales management, advertising, marketing analytics, social media marketing, and content strategy. Learn SEO, SEM, marketing automation, and CRM while working on real marketing campaigns. Graduate ready for roles as Brand Manager, Marketing Executive, Product Manager, or Market Research Analyst with skills in integrated marketing communications and customer engagement strategies. ",
-    careerOutcomes: [
-      "Brand Manager",
-      "Digital Marketing Manager",
-      "Marketing Research Analyst",
-      "Product Manager",
-      "Sales Manager",
-      "Market Development Manager",
-    ],
-  },
-  {
-    name: "Financial Management",
-    duration: "3 Years",
-    fees: "₹1,50,000/year",
-    image: financialImage,
-    description:
-      "Learn corporate finance, investment analysis, financial planning, and portfolio management. This finance-focused programme covers financial accounting, financial markets, risk management, financial modeling, and investment banking. Gain expertise in financial statement analysis, budgeting, capital budgeting, and stock market analysis. Prepare for careers as Financial Analyst, Investment Banker, Financial Planner, or Treasury Manager with training in financial software, derivatives trading, and wealth management. ",
-    careerOutcomes: [
-      "Financial Analyst",
-      "Investment Banker",
-      "Portfolio Manager",
-      "Financial Planning & Analysis",
-      "Risk Management Analyst",
-      "Corporate Finance Manager ",
-    ],
-  },
-  {
-    name: "Human Resource Management",
-    duration: "3 Years",
-    fees: "₹1,50,000/year",
-    image: hrImage,
-    description:
-      "Learn talent acquisition, employee engagement, performance management, and organizational behavior. This HR-focused programme covers recruitment strategies, training and development, compensation and benefits, labor laws, and HR analytics. Master HRIS systems, workforce planning, talent management, and employee relations. Graduate ready for roles as HR Manager, Talent Acquisition Specialist, Training Manager, or HR Business Partner with expertise in performance appraisal systems and change management. ",
-    careerOutcomes: [
-      "HR Manager",
-      "Talent Acquisition Manager",
-      "Learning & Development Manager",
-      "Compensation & Benefits Manager",
-      "HR Business Partner",
-      "Employee Engagement Manager ",
-    ],
-  },
-  {
-    name: "Digital Marketing Management",
-    duration: "3 Years",
-    fees: "₹1,50,000/year",
-    image: digitalMarketingImage,
-    description:
-      "Learn SEO, SEM, social media marketing, content marketing, and marketing automation in this tech-driven programme. Gain hands-on experience with Google Analytics, Google Ads, Facebook Ads, Instagram marketing, and e-commerce marketing. Learn conversion rate optimization, influencer marketing, email marketing, and digital advertising strategies. Includes certifications in Google Digital Marketing and HubSpot. Graduate as Digital Marketing Manager, SEO Specialist, Social Media Manager, or Content Strategist. ",
-    careerOutcomes: [
-      "SEO/SEM Specialist",
-      "Social Media Manager",
-      "Content Marketing Manager",
-      "Performance Marketing Manager",
-      "E-commerce Marketing Manager",
-      "Growth Hacking Specialist",
-    ],
-  },
-
-  {
-    name: "Banking and Financial Services",
-    duration: "3 Years",
-    fees: "₹1,50,000/year",
-    image: bankingImage,
-    description:
-      "Specialize in retail banking, corporate banking, investment banking, and digital banking operations. This industry-aligned programme covers credit management, loan processing, banking regulations, RBI guidelines, and fintech innovations. Learn core banking solutions, mobile banking, treasury operations, trade finance, and banking compliance. Graduate ready for positions in public sector banks, private banks, NBFCs, or fintech companies with expertise in banking technology and relationship management. ",
-    careerOutcomes: [
-      "Relationship Manager",
-      "Credit Analyst",
-      "Branch Manager",
-      "Treasury Manager",
-      "Loan Officer",
-      "Wealth Management Advisor",
-    ],
-  },
-  {
-    name: "International Business Management",
-    duration: "3 Years",
-    fees: "₹1,50,000/year",
-    image: internationalBusinessImage,
-    description:
-      "Integrate international marketing, global finance, international HRM, and cross-border strategy in this comprehensive programme. Study multinational business strategies, global market entry modes, foreign direct investment, and international business ethics. Explore emerging markets, BRICS economies, global entrepreneurship, and international negotiations. Prepare for roles as International Business Manager, Global Strategy Consultant, or Trade Analyst with cultural intelligence and global leadership skills. ",
-    careerOutcomes: [
-      "International Operations Manager",
-      "Global Strategy Consultant",
-      "Foreign Trade Analyst",
-      "International Procurement Manager",
-      "Global Business Development Manager",
-      "Regional Business Manager (Asia-Pacific/Middle East/Europe)",
-    ],
-  },
-  {
-    name: "Logistics and Supply Chain Management",
-    duration: "3 Years",
-    fees: "₹1,50,000/year",
-    image: logisticsImage,
-    description:
-      "Learn supply chain planning, inventory management, warehouse management, procurement, and logistics optimization. This operations-focused programme covers demand forecasting, supply chain analytics, ERP systems, transportation management, and vendor management. Gain training in SAP, lean management, Six Sigma, and supply chain risk management. Graduate as Supply Chain Manager, Logistics Coordinator, Procurement Manager, or Operations Analyst specializing in e-commerce logistics and distribution management. ",
-    careerOutcomes: [
-      "Supply Chain Manager",
-      "Logistics Coordinator",
-      "Procurement Manager",
-      "Warehouse Manager",
-      "Operation Manager",
-      "Demand Planning Manager",
-    ],
-  },
-  {
-    name: "Innovation and Entrepreneurship",
-    duration: "3 Years",
-    fees: "₹1,50,000/year",
-    image: innovationImage,
-    description:
-      "Turn business ideas into reality with training in design thinking, lean startup methodology, business model innovation, and venture capital. This startup-focused programme covers entrepreneurial finance, new venture creation, startup funding, and pitch development. Access incubation centers, mentorship from successful entrepreneurs, and startup networking events. Graduate ready to become an entrepreneur, startup founder, innovation consultant, or business development manager with expertise in fundraising strategies and scalable business models. ",
-    careerOutcomes: [
-      "Startup Founder/Entrepreneur",
-      "Business Development Manager",
-      "Innovation Consultant",
-      "Venture Capital Analyst",
-      "Product Innovation Manager",
-      "Corporate Innovation Manager",
-    ],
-  },
-];
-
 // Motion variants
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -185,23 +95,143 @@ const fadeSide = {
   visible: { opacity: 1, x: 0 },
 };
 
+const specializations = [
+  {
+    name: "Marketing Management",
+    duration: "3 Years",
+    fees: "₹1,50,000/year",
+    image: marketingImage,
+    description:
+      "Develop expertise in digital marketing strategies, brand management, consumer behavior, and market research...",
+    careerOutcomes: [
+      "Brand Manager",
+      "Digital Marketing Manager",
+      "Marketing Research Analyst",
+      "Product Manager",
+      "Sales Manager",
+      "Market Development Manager",
+    ],
+    logos: [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10],
+  },
+  {
+    name: "Financial Management",
+    duration: "3 Years",
+    fees: "₹1,50,000/year",
+    image: financialImage,
+    description: "Learn corporate finance, investment analysis, financial planning...",
+    careerOutcomes: [
+      "Financial Analyst",
+      "Investment Banker",
+      "Portfolio Manager",
+      "Financial Planning & Analysis",
+      "Risk Management Analyst",
+      "Corporate Finance Manager",
+    ],
+    logos: [logo11, logo12, logo13, logo14, logo15, logo16, logo17, logo18, logo19, logo20],
+  },
+  {
+    name: "Human Resource Management",
+    duration: "3 Years",
+    fees: "₹1,50,000/year",
+    image: hrImage,
+    description: "Learn talent acquisition, employee engagement, performance management...",
+    careerOutcomes: [
+      "HR Manager",
+      "Talent Acquisition Manager",
+      "Learning & Development Manager",
+      "Compensation & Benefits Manager",
+      "HR Business Partner",
+      "Employee Engagement Manager",
+    ],
+    logos: [logo31, logo32, logo33, logo34, logo35, logo36, logo37, logo38, logo39, logo40],
+  },
+  {
+    name: "Digital Marketing Management",
+    duration: "3 Years",
+    fees: "₹1,50,000/year",
+    image: digitalMarketingImage,
+    description: "Learn SEO, SEM, social media marketing, content marketing...",
+    careerOutcomes: [
+      "SEO/SEM Specialist",
+      "Social Media Manager",
+      "Content Marketing Manager",
+      "Performance Marketing Manager",
+      "E-commerce Marketing Manager",
+      "Growth Hacking Specialist",
+    ],
+    logos: [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10],
+  },
+  {
+    name: "Banking and Financial Services",
+    duration: "3 Years",
+    fees: "₹1,50,000/year",
+    image: bankingImage,
+    description: "Specialize in retail banking, corporate banking, investment banking...",
+    careerOutcomes: [
+      "Relationship Manager",
+      "Credit Analyst",
+      "Branch Manager",
+      "Treasury Manager",
+      "Loan Officer",
+      "Wealth Management Advisor",
+    ],
+    logos: [logo11, logo12, logo13, logo14, logo15, logo16, logo17, logo18, logo19, logo20],
+  },
+  {
+    name: "International Business Management",
+    duration: "3 Years",
+    fees: "₹1,50,000/year",
+    image: internationalBusinessImage,
+    description: "Integrate international marketing, global finance, international HRM...",
+    careerOutcomes: [
+      "International Operations Manager",
+      "Global Strategy Consultant",
+      "Foreign Trade Analyst",
+      "International Procurement Manager",
+      "Global Business Development Manager",
+      "Regional Business Manager",
+    ],
+    logos: [logo21, logo22, logo23, logo24, logo25, logo26, logo27, logo28, logo29, logo30],
+  },
+  {
+    name: "Logistics and Supply Chain Management",
+    duration: "3 Years",
+    fees: "₹1,50,000/year",
+    image: logisticsImage,
+    description: "Learn supply chain planning, inventory management, warehouse management...",
+    careerOutcomes: [
+      "Supply Chain Manager",
+      "Logistics Coordinator",
+      "Procurement Manager",
+      "Warehouse Manager",
+      "Operation Manager",
+      "Demand Planning Manager",
+    ],
+    logos: [logo41, logo42, logo43, logo44, logo45, logo46, logo47, logo48, logo49, logo50],
+  },
+  {
+    name: "Innovation and Entrepreneurship",
+    duration: "3 Years",
+    fees: "₹1,50,000/year",
+    image: innovationImage,
+    description: "Turn business ideas into reality with training in design thinking...",
+    careerOutcomes: [
+      "Startup Founder/Entrepreneur",
+      "Business Development Manager",
+      "Innovation Consultant",
+      "Venture Capital Analyst",
+      "Product Innovation Manager",
+      "Corporate Innovation Manager",
+    ],
+    logos: [logo41, logo42, logo43, logo44, logo45, logo46, logo47, logo48, logo49, logo50],
+  },
+];
+
 function BbaAdmissionCourses() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [open, setOpen] = useState(false);
 
   const current = specializations[selectedIndex];
-  const logos = [
-    logo1,
-    logo2,
-    logo3,
-    logo4,
-    logo5,
-    logo6,
-    logo7,
-    logo8,
-    logo9,
-    logo10,
-  ];
 
   return (
     <motion.div className="px-4 sm:px-8 md:px-16 py-12 bg-white poppins-regular">
@@ -212,7 +242,7 @@ function BbaAdmissionCourses() {
         </h2>
         <p className="text-gray-600 text-base sm:text-lg">
           Choose from the range of most comprehensive BBA courses available in
-          Maharashtra.{" "}
+          Maharashtra.
         </p>
       </motion.div>
 
@@ -260,9 +290,7 @@ function BbaAdmissionCourses() {
                 </span>
               </div>
 
-              <p className="text-gray-700 leading-7 mb-8">
-                {current.description}
-              </p>
+              <p className="text-gray-700 leading-7 mb-8">{current.description}</p>
 
               <div className="mb-10">
                 {/* CAREER OPPORTUNITIES – TOP */}
@@ -270,7 +298,6 @@ function BbaAdmissionCourses() {
                   <h4 className="font-semibold mb-4 text-[#b1124a]">
                     Career Opportunities
                   </h4>
-
                   <ul className="grid grid-cols-2 sm:grid-cols-2 gap-2">
                     {current.careerOutcomes.map((c, i) => (
                       <li key={i} className="flex gap-2 items-center">
@@ -279,20 +306,21 @@ function BbaAdmissionCourses() {
                     ))}
                   </ul>
                 </div>
+
+                {/* TOP RECRUITERS */}
                 <h4 className="font-semibold mb-4 text-[#b1124a]">
-                  Top Recruiters
+                  Recruiters for {current.name}
                 </h4>
-                {/* LOGOS SECTION – BOTTOM */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center">
-                  {logos.map((logo, index) => (
+                  {current.logos.map((logo, index) => (
                     <div
                       key={index}
-                      className="flex justify-center items-center"
+                      className="flex justify-center items-center border rounded-xl border-gray-400"
                     >
                       <img
                         src={logo}
                         alt={`logo-${index}`}
-                        className="h-14 object-contain  hover:grayscale-0 transition"
+                        className="h-14 object-contain hover:grayscale-0 transition "
                       />
                     </div>
                   ))}

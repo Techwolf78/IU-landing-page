@@ -4,29 +4,36 @@ import { FaArrowDown } from "react-icons/fa";
 /* ---------------- FAQ DATA ---------------- */
 const FAQ_DATA = [
   {
-    question: " What is the eligibility for BBA admission at Indira University?",
-    answer: "You need to have passed 10+2 from any recognized board with minimum 45% aggregate. All streams (Commerce, Science, Arts) are eligible.",
+    question:
+      " What is the eligibility for BBA admission at Indira University?",
+    answer:
+      "You need to have passed 10+2 from any recognized board with minimum 45% aggregate. All streams (Commerce, Science, Arts) are eligible.",
   },
   {
     question: " Which entrance exams are accepted for BBA admission?",
-    answer: "We accept CUET and conduct our own Indira University Common Entrance Test (IU-CET).",
+    answer:
+      "We accept CUET and conduct our own Indira University Common Entrance Test (IU-CET).",
   },
   {
     question: " What is the BBA course fee at Indira University Pune?",
-    answer: "The total fee for the BBA programme is ₹1.5 Lakh, and scholarships are also available.",
+    answer:
+      "The total fee for the BBA programme is ₹1.5 Lakh, and scholarships are also available.",
   },
   {
     question: " What is the highest placement package for BBA graduates?",
-    answer: "The highest placement package is up to ₹9 LPA, and the average package is up to ₹4 LPA.",
+    answer:
+      "The highest placement package is up to ₹9 LPA, and the average package is up to ₹4 LPA.",
   },
   {
     question: " Can I pursue MBA after BBA from Indira University?",
-    answer: "Yes! Our BBA graduates have been placed in top B-schools including and international universities.",
+    answer:
+      "Yes! Our BBA graduates have been placed in top B-schools including and international universities.",
   },
-  
+
   {
     question: " Is work experience required for BBA admission?",
-    answer: "No, BBA is an undergraduate programme for students directly after 12th. No work experience is required.",
+    answer:
+      "No, BBA is an undergraduate programme for students directly after 12th. No work experience is required.",
   },
 ];
 
@@ -106,7 +113,9 @@ function BbaAdmissionFAQ() {
             Frequently Asked Questions
           </h2>
           <p className="text-white max-w-3xl mx-auto">
-Get answers to the most common questions about BBA course of Indira University, Maharashtra.           </p>
+            Get answers to the most common questions about BBA course of Indira
+            University, Maharashtra.{" "}
+          </p>
         </div>
 
         {/* 3 Column Grid for FAQ Cards */}
@@ -120,7 +129,6 @@ Get answers to the most common questions about BBA course of Indira University, 
             />
           ))}
         </div>
-
       </div>
     </section>
   );
