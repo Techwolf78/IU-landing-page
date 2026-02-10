@@ -45,8 +45,8 @@ function Navbar() {
 
             {/* Center Text - Mobile */}
             <div className="text-center w-full">
-              <h1 className="text-white text-sm font-bold animate-pulseText px-2 leading-tight">
-                INDIRA UNIVERSITY<br />SCHOOL OF BUSINESS
+              <h1 className="text-white text-xl font-bold animate-pulseText px-2 leading-tight">
+                  SCHOOL OF BUSINESS<br />(INDIRA UNIVERSITY)
               </h1>
             </div>
           </div>

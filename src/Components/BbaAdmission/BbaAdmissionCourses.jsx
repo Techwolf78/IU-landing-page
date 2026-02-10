@@ -190,10 +190,18 @@ function BbaAdmissionCourses() {
   const [open, setOpen] = useState(false);
 
   const current = specializations[selectedIndex];
-const logos = [
-  logo1, logo2, logo3, logo4, logo5,
-  logo6, logo7, logo8, logo9, logo10,
-];
+  const logos = [
+    logo1,
+    logo2,
+    logo3,
+    logo4,
+    logo5,
+    logo6,
+    logo7,
+    logo8,
+    logo9,
+    logo10,
+  ];
 
   return (
     <motion.div className="px-4 sm:px-8 md:px-16 py-12 bg-white poppins-regular">
@@ -203,7 +211,8 @@ const logos = [
           Explore BBA Specializations
         </h2>
         <p className="text-gray-600 text-base sm:text-lg">
-          Choose from India's most comprehensive range of BBA courses
+          Choose from the range of most comprehensive BBA courses available in
+          Maharashtra.{" "}
         </p>
       </motion.div>
 
@@ -255,42 +264,40 @@ const logos = [
                 {current.description}
               </p>
 
-         <div className="mb-10">
-  {/* CAREER OPPORTUNITIES – TOP */}
-  <div className="mb-8">
-    <h4 className="font-semibold mb-4 text-[#b1124a]">
-      Career Opportunities
-    </h4>
+              <div className="mb-10">
+                {/* CAREER OPPORTUNITIES – TOP */}
+                <div className="mb-8">
+                  <h4 className="font-semibold mb-4 text-[#b1124a]">
+                    Career Opportunities
+                  </h4>
 
-    <ul className="grid grid-cols-2 sm:grid-cols-2 gap-2">
-      {current.careerOutcomes.map((c, i) => (
-        <li key={i} className="flex gap-2 items-center">
-          ✔ {c}
-        </li>
-      ))}
-    </ul>
-  </div>
- <h4 className="font-semibold mb-4 text-[#b1124a]">
-      Top Recruiters 
-    </h4>
-  {/* LOGOS SECTION – BOTTOM */}
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center">
-    
-    {logos.map((logo, index) => (
-      <div
-        key={index}
-        className="flex justify-center items-center"
-      >
-        <img
-          src={logo}
-          alt={`logo-${index}`}
-          className="h-14 object-contain  hover:grayscale-0 transition"
-        />
-      </div>
-    ))}
-  </div>
-</div>
-
+                  <ul className="grid grid-cols-2 sm:grid-cols-2 gap-2">
+                    {current.careerOutcomes.map((c, i) => (
+                      <li key={i} className="flex gap-2 items-center">
+                        ✔ {c}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <h4 className="font-semibold mb-4 text-[#b1124a]">
+                  Top Recruiters
+                </h4>
+                {/* LOGOS SECTION – BOTTOM */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center">
+                  {logos.map((logo, index) => (
+                    <div
+                      key={index}
+                      className="flex justify-center items-center"
+                    >
+                      <img
+                        src={logo}
+                        alt={`logo-${index}`}
+                        className="h-14 object-contain  hover:grayscale-0 transition"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
 
               <button
                 onClick={() => setOpen(true)}

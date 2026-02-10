@@ -16,8 +16,8 @@ const FAQ_DATA = [
     answer: "The total fee for the BBA programme is ₹1.5 Lakh, and scholarships are also available.",
   },
   {
-    question: " What is the average placement package for BBA graduates?",
-    answer: "The average package is ₹4 LPA with highest going up to ₹9 LPA.",
+    question: " What is the highest placement package for BBA graduates?",
+    answer: "The highest placement package is up to ₹9 LPA, and the average package is up to ₹4 LPA.",
   },
   {
     question: " Can I pursue MBA after BBA from Indira University?",
@@ -106,8 +106,7 @@ function BbaAdmissionFAQ() {
             Frequently Asked Questions
           </h2>
           <p className="text-white max-w-3xl mx-auto">
-            Get answers to the most common questions about BBA admissions
-          </p>
+Get answers to the most common questions about BBA course of Indira University, Maharashtra.           </p>
         </div>
 
         {/* 3 Column Grid for FAQ Cards */}
