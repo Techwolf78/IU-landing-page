@@ -236,7 +236,7 @@ export default function CampusFacilities() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[100vh] bg-gradient-to-r from-[#990000] via-[#011E5A] to-[#051D58] py-4 md:py-10"
+      className="relative min-h-[100vh] bg-gradient-to-r from-[#990000] via-[#011E5A] to-[#051D58] py-4 md:py-10 "
       style={{ height: `${data.length * 100}vh` }}
     >
       {/* Sticky container that stays in view */}

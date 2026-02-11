@@ -37,7 +37,7 @@ const DomainCertifications = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-gray-50   py-12 md:py-16 relative "
+      className="w-full bg-gray-50   py-12 md:py-16 relative overflow-hidden"
     >
       {/* LOGO */}
       <div className="absolute top-13 right-4 sm:top-6 sm:right-6 lg:top-20 lg:right-10
