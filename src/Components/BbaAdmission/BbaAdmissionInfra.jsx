@@ -44,17 +44,29 @@ const data = [
 
 export default function CampusFacilities() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(false);
   const sectionRef = useRef(null);
   const isScrollingRef = useRef(false);
 
-  // Desktop only scroll logic
+  // Detect screen size properly
   useEffect(() => {
-    if (window.innerWidth < 1024) return;
+    const checkScreen = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  // Smooth desktop wheel scroll
+  useEffect(() => {
+    if (!isDesktop) return;
 
     const handleWheel = (e) => {
       if (!sectionRef.current || isScrollingRef.current) return;
 
       const rect = sectionRef.current.getBoundingClientRect();
+
       if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
         e.preventDefault();
 
@@ -68,121 +80,127 @@ export default function CampusFacilities() {
         if (newIndex !== activeIndex) {
           isScrollingRef.current = true;
           setActiveIndex(newIndex);
-          setTimeout(() => (isScrollingRef.current = false), 800);
+          setTimeout(() => {
+            isScrollingRef.current = false;
+          }, 700);
         }
       }
     };
 
     window.addEventListener("wheel", handleWheel, { passive: false });
     return () => window.removeEventListener("wheel", handleWheel);
-  }, [activeIndex]);
+  }, [activeIndex, isDesktop]);
 
   return (
     <section
       ref={sectionRef}
       className="relative min-h-screen bg-gradient-to-r from-[#990000] via-[#011E5A] to-[#051D58] py-10"
       style={{
-        height: window.innerWidth >= 1024 ? `${data.length * 100}vh` : "auto",
+        height: isDesktop ? `${data.length * 100}vh` : "auto",
       }}
     >
       {/* ================= DESKTOP ================= */}
-      <div className="hidden lg:flex sticky top-0 h-screen items-center justify-center overflow-hidden px-6">
-        <div className="relative container mx-auto w-full max-w-7xl">
-          {data.map((item, index) => (
-            <div
-              key={item.id}
-              className={`transition-all duration-700 ${
-                activeIndex === index
-                  ? "opacity-100"
-                  : "opacity-0 absolute inset-0 pointer-events-none"
-              }`}
-            >
-              <div className="flex items-center justify-between gap-8 min-h-[70vh]">
-                {/* Content */}
-                <div className="w-5/12">
-                  <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black text-sm font-semibold rounded-full mb-4 shadow-lg">
-                    Campus Highlights
-                  </span>
+      {isDesktop && (
+        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden px-6">
+          <div className="container mx-auto w-full max-w-7xl relative">
+            {data.map((item, index) => (
+              <div
+                key={item.id}
+                className={`transition-all duration-700 ${
+                  activeIndex === index
+                    ? "opacity-100"
+                    : "opacity-0 absolute inset-0 pointer-events-none"
+                }`}
+              >
+                <div className="flex items-center justify-between gap-8 min-h-[70vh]">
+                  {/* Content */}
+                  <div className="w-5/12">
+                    <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black text-sm font-semibold rounded-full mb-4 shadow-lg">
+                      Campus Highlights
+                    </span>
 
-                  <h2 className="text-5xl font-bold mb-4 text-white">
-                    {item.title}
-                  </h2>
+                    <h2 className="text-5xl font-bold mb-4 text-white">
+                      {item.title}
+                    </h2>
 
-                  <div className="w-24 h-1 bg-gradient-to-r from-[#FCC409] to-[#FFD700] mb-6 rounded-full"></div>
+                    <div className="w-24 h-1 bg-gradient-to-r from-[#FCC409] to-[#FFD700] mb-6 rounded-full"></div>
 
-                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-xl">
-                    <p className="text-lg text-white/90 leading-relaxed mb-6">
-                      {item.description}
-                    </p>
+                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-xl">
+                      <p className="text-lg text-white/90 leading-relaxed mb-6">
+                        {item.description}
+                      </p>
 
-                    <button className="px-6 py-3 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black font-semibold rounded-lg shadow-lg">
-                      Learn More
-                    </button>
+                      <button className="px-6 py-3 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black font-semibold rounded-lg shadow-lg">
+                        Learn More
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Images */}
+                  <div className="w-7/12 space-y-4">
+                    <div className="flex gap-4">
+                      <img src={item.images[0]} className="w-1/2 h-40 object-cover rounded-xl" />
+                      <img src={item.images[1]} className="w-1/2 h-40 object-cover rounded-xl" />
+                    </div>
+
+                    <img src={item.images[2]} className="w-full h-60 object-cover rounded-2xl" />
+
+                    <div className="flex gap-4">
+                      <img src={item.images[3]} className="w-1/2 h-40 object-cover rounded-xl" />
+                      <img src={item.images[4]} className="w-1/2 h-40 object-cover rounded-xl" />
+                    </div>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
-                {/* Images */}
-                <div className="w-7/12 space-y-4">
-                  <div className="flex gap-4">
-                    <img src={item.images[0]} className="w-1/2 h-40 object-cover rounded-xl" />
-                    <img src={item.images[1]} className="w-1/2 h-40 object-cover rounded-xl" />
-                  </div>
+      {/* ================= MOBILE ================= */}
+      {!isDesktop && (
+        <div className="container mx-auto px-4 space-y-16">
+          {data.map((item) => (
+            <div key={item.id} className="flex flex-col gap-6">
+              <div>
+                <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black text-sm font-semibold rounded-full mb-4 shadow-lg">
+                  Campus Highlights
+                </span>
 
-                  <img src={item.images[2]} className="w-full h-60 object-cover rounded-2xl" />
+                <h2 className="text-3xl font-bold mb-4 text-white">
+                  {item.title}
+                </h2>
 
-                  <div className="flex gap-4">
-                    <img src={item.images[3]} className="w-1/2 h-40 object-cover rounded-xl" />
-                    <img src={item.images[4]} className="w-1/2 h-40 object-cover rounded-xl" />
-                  </div>
+                <div className="w-20 h-1 bg-gradient-to-r from-[#FCC409] to-[#FFD700] mb-6 rounded-full"></div>
+
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10 shadow-xl">
+                  <p className="text-base text-white/90 leading-relaxed mb-4">
+                    {item.description}
+                  </p>
+
+                  <button className="w-full px-5 py-2.5 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black font-semibold rounded-lg shadow-lg">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex gap-3">
+                  <img src={item.images[0]} className="w-1/2 h-32 object-cover rounded-lg" />
+                  <img src={item.images[1]} className="w-1/2 h-32 object-cover rounded-lg" />
+                </div>
+
+                <img src={item.images[2]} className="w-full h-44 object-cover rounded-xl" />
+
+                <div className="flex gap-3">
+                  <img src={item.images[3]} className="w-1/2 h-32 object-cover rounded-lg" />
+                  <img src={item.images[4]} className="w-1/2 h-32 object-cover rounded-lg" />
                 </div>
               </div>
             </div>
           ))}
         </div>
-      </div>
-
-      {/* ================= MOBILE ================= */}
-      <div className="lg:hidden container mx-auto px-4 space-y-16">
-        {data.map((item) => (
-          <div key={item.id} className="flex flex-col gap-6">
-            <div>
-              <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black text-sm font-semibold rounded-full mb-4 shadow-lg">
-                Campus Highlights
-              </span>
-
-              <h2 className="text-3xl font-bold mb-4 text-white">
-                {item.title}
-              </h2>
-
-              <div className="w-20 h-1 bg-gradient-to-r from-[#FCC409] to-[#FFD700] mb-6 rounded-full"></div>
-
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10 shadow-xl">
-                <p className="text-base text-white/90 leading-relaxed mb-4">
-                  {item.description}
-                </p>
-
-                <button className="w-full px-5 py-2.5 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black font-semibold rounded-lg shadow-lg">
-                  Learn More
-                </button>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="flex gap-3">
-                <img src={item.images[0]} className="w-1/2 h-32 object-cover rounded-lg" />
-                <img src={item.images[1]} className="w-1/2 h-32 object-cover rounded-lg" />
-              </div>
-
-              <img src={item.images[2]} className="w-full h-44 object-cover rounded-xl" />
-
-              <div className="flex gap-3">
-                <img src={item.images[3]} className="w-1/2 h-32 object-cover rounded-lg" />
-                <img src={item.images[4]} className="w-1/2 h-32 object-cover rounded-lg" />
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      )}
     </section>
   );
 }
