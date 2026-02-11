@@ -49,14 +49,12 @@ export default function CampusFacilities() {
   const touchStartYRef = useRef(0);
   const lastScrollTimeRef = useRef(0);
 
-  // Function for dot click navigation
   const handleDotClick = (index) => {
     if (isScrollingRef.current) return;
 
     isScrollingRef.current = true;
     setActiveIndex(index);
 
-    // Smooth scroll to section
     if (sectionRef.current) {
       const section = sectionRef.current;
       const sectionHeight = window.innerHeight;
@@ -73,7 +71,6 @@ export default function CampusFacilities() {
     }, 800);
   };
 
-  // Handle scroll events
   useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current || isScrollingRef.current) return;
@@ -102,7 +99,6 @@ export default function CampusFacilities() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [activeIndex]);
 
-  // Handle wheel scroll
   useEffect(() => {
     const handleWheel = (e) => {
       if (!sectionRef.current || isScrollingRef.current) return;
@@ -140,7 +136,6 @@ export default function CampusFacilities() {
     return () => window.removeEventListener("wheel", handleWheel);
   }, [activeIndex]);
 
-  // Handle touch events for mobile
   useEffect(() => {
     const handleTouchStart = (e) => {
       if (!sectionRef.current) return;
@@ -189,7 +184,6 @@ export default function CampusFacilities() {
     };
   }, [activeIndex]);
 
-  // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (!sectionRef.current || isScrollingRef.current) return;
@@ -220,7 +214,6 @@ export default function CampusFacilities() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [activeIndex]);
 
-  // Reset scrolling flag on mount
   useEffect(() => {
     isScrollingRef.current = false;
   }, []);
@@ -231,10 +224,10 @@ export default function CampusFacilities() {
       className="relative bg-gradient-to-r from-[#990000] via-[#011E5A] to-[#051D58]"
       style={{ height: `${data.length * 100}vh` }}
     >
-      {/* Sticky container that stays in view */}
-      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-        {/* Content Container - Inside sticky div */}
-        <div className="relative container mx-auto z-20 w-full h-full px-4 sm:px-6 py-6 sm:py-8 md:py-10">
+      {/* Sticky container */}
+      <div className="sticky top-0 h-screen flex items-center justify-center overflow-y-auto">
+        {/* Content Container */}
+        <div className="relative container mx-auto z-20 w-full h-full px-4 sm:px-6 py-4 sm:py-6">
           {data.map((item, index) => (
             <div
               key={item.id}
@@ -244,30 +237,30 @@ export default function CampusFacilities() {
                   : "opacity-0 invisible absolute inset-0 pointer-events-none"
               }`}
             >
-              <div className="flex flex-col lg:flex-row items-center justify-center w-full h-full gap-4 md:gap-6">
+              <div className="flex flex-col lg:flex-row items-start lg:items-center justify-center w-full h-full gap-4 md:gap-12">
                 {/* Content Section */}
                 <div
-                  className={`w-full lg:w-5/12 ${
+                  className={`w-full lg:w-5/13 ${
                     item.contentSide === "right" ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
                   <div className="max-w-xl mx-auto lg:mx-0">
                     {/* Badge */}
-                    <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4 md:mb-6 shadow-lg">
+                    <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black text-xs sm:text-sm font-semibold rounded-full mb-2 sm:mb-3 md:mb-4 shadow-lg">
                       Campus Highlights
                     </span>
 
                     {/* Title */}
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 text-white leading-tight">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 sm:mb-3 md:mb-4 text-white leading-tight">
                       {item.title}
                     </h2>
 
                     {/* Divider */}
-                    <div className="w-16 sm:w-20 md:w-24 lg:w-28 h-1 bg-gradient-to-r from-[#FCC409] to-[#FFD700] mb-4 sm:mb-5 md:mb-6 lg:mb-8 rounded-full lg:mr-auto"></div>
+                    <div className="w-16 sm:w-20 md:w-24 lg:w-28 h-1 bg-gradient-to-r from-[#FCC409] to-[#FFD700] mb-3 sm:mb-4 md:mb-5 lg:mb-6 rounded-full lg:mr-auto"></div>
 
-                    {/* Content Card */}
-                    <div className="bg-white/5 backdrop-blur-sm rounded-lg md:rounded-xl lg:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 border border-white/10 shadow-xl">
-                      <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 leading-relaxed mb-4 sm:mb-5 md:mb-6 line-clamp-4 sm:line-clamp-5 md:line-clamp-6 lg:line-clamp-none">
+                    {/* Content Card - Full text visible on mobile */}
+                    <div className="bg-white/5 backdrop-blur-sm rounded-lg md:rounded-xl lg:rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6 border border-white/10 shadow-xl">
+                      <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 leading-relaxed whitespace-normal break-words">
                         {item.description}
                       </p>
 
@@ -276,7 +269,7 @@ export default function CampusFacilities() {
                         onClick={() =>
                           window.scrollTo({ top: 0, behavior: "smooth" })
                         }
-                        className="w-full sm:w-auto px-4 sm:px-5 py-2 sm:py-2.5 md:px-6 md:py-3 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black font-semibold rounded-lg hover:scale-105 active:scale-95 transition-transform duration-300 shadow-lg text-xs sm:text-sm md:text-base lg:text-lg cursor-pointer"
+                        className="w-full sm:w-auto mt-3 sm:mt-4 px-4 sm:px-5 py-2 sm:py-2.5 md:px-6 md:py-3 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black font-semibold rounded-lg hover:scale-105 active:scale-95 transition-transform duration-300 shadow-lg text-xs sm:text-sm md:text-base lg:text-lg cursor-pointer"
                       >
                         Learn More
                       </button>
@@ -284,60 +277,55 @@ export default function CampusFacilities() {
                   </div>
                 </div>
 
-                {/* Image Grid Section */}
+                {/* Image Grid Section - Smaller on mobile */}
                 <div
-                  className={`w-full lg:w-7/12 ${
+                  className={`w-full lg:w-7/16 ${
                     item.contentSide === "right" ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
-                  <div className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[550px] w-full">
+                  <div className="relative h-[180px] sm:h-[220px] md:h-[300px] lg:h-[450px] xl:h-[500px] w-full">
                     {/* Top Row - 2 Images */}
                     <div className="flex gap-1 sm:gap-2 md:gap-3 lg:gap-4 mb-1 sm:mb-2 md:mb-3 lg:mb-4">
-                      <div className="relative w-1/2 h-20 sm:h-24 md:h-28 lg:h-36 xl:h-40 overflow-hidden rounded-md sm:rounded-lg md:rounded-xl shadow-lg group">
+                      <div className="relative w-1/2 h-14 sm:h-16 md:h-20 lg:h-32 xl:h-36 overflow-hidden rounded-md sm:rounded-lg md:rounded-xl shadow-lg group">
                         <img
                           src={item.images[0]}
                           alt={`${item.title} 1`}
                           className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
-                      <div className="relative w-1/2 h-20 sm:h-24 md:h-28 lg:h-36 xl:h-40 overflow-hidden rounded-md sm:rounded-lg md:rounded-xl shadow-lg group">
+                      <div className="relative w-1/2 h-14 sm:h-16 md:h-20 lg:h-32 xl:h-36 overflow-hidden rounded-md sm:rounded-lg md:rounded-xl shadow-lg group">
                         <img
                           src={item.images[1]}
                           alt={`${item.title} 2`}
                           className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
                     </div>
 
                     {/* Middle Row - 1 Big Image */}
-                    <div className="relative h-24 sm:h-28 md:h-36 lg:h-48 xl:h-52 mb-1 sm:mb-2 md:mb-3 lg:mb-4 overflow-hidden rounded-md sm:rounded-lg md:rounded-xl lg:rounded-2xl shadow-lg sm:shadow-xl group">
+                    <div className="relative h-20 sm:h-24 md:h-32 lg:h-44 xl:h-48 mb-1 sm:mb-2 md:mb-3 lg:mb-4 overflow-hidden rounded-md sm:rounded-lg md:rounded-xl lg:rounded-2xl shadow-lg group">
                       <img
                         src={item.images[2]}
                         alt={`${item.title} 3`}
-                        className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-full object-container transform transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                     </div>
 
                     {/* Bottom Row - 2 Images */}
                     <div className="flex gap-1 sm:gap-2 md:gap-3 lg:gap-4">
-                      <div className="relative w-1/2 h-20 sm:h-24 md:h-28 lg:h-36 xl:h-40 overflow-hidden rounded-md sm:rounded-lg md:rounded-xl shadow-lg group">
+                      <div className="relative w-1/2 h-14 sm:h-16 md:h-20 lg:h-32 xl:h-36 overflow-hidden rounded-md sm:rounded-lg md:rounded-xl shadow-lg group">
                         <img
                           src={item.images[3]}
                           alt={`${item.title} 4`}
                           className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
-                      <div className="relative w-1/2 h-20 sm:h-24 md:h-28 lg:h-36 xl:h-40 overflow-hidden rounded-md sm:rounded-lg md:rounded-xl shadow-lg group">
+                      <div className="relative w-1/2 h-14 sm:h-16 md:h-20 lg:h-32 xl:h-36 overflow-hidden rounded-md sm:rounded-lg md:rounded-xl shadow-lg group">
                         <img
                           src={item.images[4]}
                           alt={`${item.title} 5`}
                           className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
                     </div>
                   </div>
@@ -347,7 +335,7 @@ export default function CampusFacilities() {
           ))}
         </div>
 
-        {/* Navigation Dots - Desktop Only */}
+        {/* Navigation Dots - Desktop */}
         <div className="hidden lg:flex absolute right-4 xl:right-8 2xl:right-12 top-1/2 transform -translate-y-1/2 z-30 flex-col gap-3 xl:gap-4">
           {data.map((_, index) => (
             <button
@@ -358,7 +346,6 @@ export default function CampusFacilities() {
                   ? "bg-gradient-to-r from-[#FCC409] to-[#FFD700] scale-125 ring-3 xl:ring-4 ring-[#FCC409]/30"
                   : "bg-white/30 hover:bg-white/50 ring-1 xl:ring-2 ring-white/20"
               }`}
-              aria-label={`Go to slide ${index + 1}`}
             >
               {activeIndex === index && (
                 <div className="w-1.5 h-1.5 xl:w-2 xl:h-2 2xl:w-2.5 2xl:h-2.5 bg-black rounded-full"></div>
@@ -367,30 +354,29 @@ export default function CampusFacilities() {
           ))}
         </div>
 
-        {/* Mobile & Tablet Navigation Dots */}
-        <div className="lg:hidden absolute bottom-4 left-1/2 transform -translate-x-1/2 z-30 flex gap-2 sm:gap-3">
+        {/* Mobile Navigation Dots */}
+        <div className="lg:hidden absolute bottom-3 left-1/2 transform -translate-x-1/2 z-30 flex gap-2">
           {data.map((_, index) => (
             <button
               key={index}
               onClick={() => handleDotClick(index)}
-              className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-300 ${
+              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
                 activeIndex === index
                   ? "bg-gradient-to-r from-[#FCC409] to-[#FFD700] scale-125 ring-2 ring-[#FCC409]/50"
                   : "bg-white/40"
               }`}
-              aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
 
-        {/* Mobile & Tablet Section Counter */}
-        <div className="lg:hidden absolute top-4 right-4 sm:top-5 sm:right-5 z-30">
+        {/* Mobile Counter */}
+        <div className="lg:hidden absolute top-3 right-3 sm:top-4 sm:right-4 z-30">
           <div className="text-white/80 flex items-center">
-            <span className="text-base sm:text-lg md:text-xl font-bold text-[#FCC409]">
+            <span className="text-sm sm:text-base font-bold text-[#FCC409]">
               {activeIndex + 1}
             </span>
-            <span className="text-white/60 mx-1 sm:mx-2">/</span>
-            <span className="text-xs sm:text-sm md:text-base">{data.length}</span>
+            <span className="text-white/60 mx-1">/</span>
+            <span className="text-xs sm:text-sm">{data.length}</span>
           </div>
         </div>
       </div>
