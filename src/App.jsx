@@ -5,6 +5,7 @@ import Footer from "./Pages/Footer";
 import Brochure from "./Pages/Brochure";
 import BbaAdmission from "./Pages/BbaAdmission";
 import ApplyButtonRight from "./Components/ApplyButtonRight";
+import ThankYou from "./Pages/Thankyou";
 
 
 // Importing the 404 Page
@@ -22,6 +23,7 @@ function App() {
             {/* Define routes for all the pages */}
             <Route path="/" element={<BbaAdmission />} />
             <Route path="*" element={<NotFoundPage />} />
+            <Route path="/thankyou" element={<ThankYou />} />
           </Routes>
           <Footer />
         </main>
