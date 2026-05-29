@@ -34,24 +34,18 @@ const ThankYou = () => {
         <title>Thank You - IU Pune</title>
         <meta name="description" content="Thank you for your interest in IU Pune. Your lead has been successfully captured." />
         {/* Google Ads Conversion Tracking */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18195766943"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-18195766943');
-            gtag('config', 'AW-16977491177');
-            gtag('event', 'conversion', {
-              'send_to': 'AW-18195766943/AT-cCOPwr7UcEJ-9teRD',
-              'value': 1.0,
-              'currency': 'INR'
-            });
-            gtag('event', 'conversion', {
-              'send_to': 'AW-16977491177/Y_6BCM_mk7YaEOnpv58_'
-            });
-          `}
-        </script>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16977491177"></script>
+                <script>
+                  {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'AW-16977491177');
+                    gtag('event', 'conversion', {
+                      'send_to': 'AW-16977491177/Y_6BCM_mk7YaEOnpv58_'
+                    });
+                  `}
+                </script>
       </Helmet>
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg p-8 text-center">
