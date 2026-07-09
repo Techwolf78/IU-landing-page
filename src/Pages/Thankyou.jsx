@@ -38,7 +38,7 @@ const ThankYou = () => {
     const timer = setInterval(() => {
       setCountdown((prev) => {
         if (prev <= 1) {
-          navigate('/');
+          window.location.href = "https://indirauniversity.edu.in/";
           return 0;
         }
         return prev - 1;
@@ -61,7 +61,7 @@ const ThankYou = () => {
   };
 
   const handleReturnHome = () => {
-    navigate('/');
+    window.location.href = "https://indirauniversity.edu.in/";
   };
 
   return (
