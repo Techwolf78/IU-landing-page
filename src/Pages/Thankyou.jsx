@@ -70,45 +70,45 @@ const ThankYou = () => {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-[#FCC409]/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="relative w-full max-w-lg bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl p-8 sm:p-12 text-center text-white" data-aos="zoom-in">
+      <div className="relative w-full max-w-md bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-6 sm:p-8 text-center text-white animate-fade-in">
         {/* Glowing Animated Success Icon */}
-        <div className="relative mx-auto w-24 h-24 mb-8 flex items-center justify-center rounded-full bg-gradient-to-tr from-[#FCC409]/20 to-[#FFD700]/30 border border-[#FCC409]/40 shadow-[0_0_30px_rgba(252,196,9,0.2)]">
-          <CheckCircle2 className="w-12 h-12 text-[#FCC409] animate-pulse" />
+        <div className="relative mx-auto w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-gradient-to-tr from-[#FCC409]/20 to-[#FFD700]/30 border border-[#FCC409]/40 shadow-[0_0_30px_rgba(252,196,9,0.2)]">
+          <CheckCircle2 className="w-8 h-8 text-[#FCC409] animate-pulse" />
         </div>
 
         {/* Heading */}
-        <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 tracking-tight bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
+        <h1 className="text-2xl sm:text-3xl font-extrabold mb-2 tracking-tight bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
           Application Received!
         </h1>
         
-        <p className="text-base sm:text-lg text-gray-300/90 leading-relaxed mb-6">
+        <p className="text-sm sm:text-base text-gray-300/90 leading-relaxed mb-4">
           Thank you for applying to the BBA program at <span className="text-[#FCC409] font-semibold">Indira University, Pune</span>. 
           Our admissions advisor will connect with you shortly.
         </p>
 
         {/* Extra Info Box */}
-        <div className="bg-white/5 border border-white/5 rounded-2xl p-4 mb-8 flex items-center justify-center gap-3 text-sm text-gray-300">
-          <Calendar className="w-5 h-5 text-[#FCC409] flex-shrink-0" />
+        <div className="bg-white/5 border border-white/5 rounded-xl p-3 mb-4 flex items-center justify-center gap-2.5 text-xs sm:text-sm text-gray-300">
+          <Calendar className="w-4 h-4 text-[#FCC409] flex-shrink-0" />
           <span>Admissions open for Academic Year 2026-27</span>
         </div>
 
         {/* Countdown timer badge */}
-        <div className="inline-block px-4 py-1.5 bg-[#FCC409]/10 text-[#FCC409] text-xs font-semibold rounded-full border border-[#FCC409]/20 mb-8">
-          Redirecting to home page in <span className="font-bold text-sm mx-0.5">{countdown}</span> seconds
+        <div className="inline-block px-3.5 py-1 bg-[#FCC409]/10 text-[#FCC409] text-[11px] font-semibold rounded-full border border-[#FCC409]/20 mb-4">
+          Redirecting to home page in <span className="font-bold text-xs mx-0.5">{countdown}</span> seconds
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <button
             onClick={handleGoBack}
-            className="flex items-center justify-center gap-2 px-6 py-3 border border-white/20 text-white rounded-xl hover:bg-white/10 transition-all duration-300 cursor-pointer font-medium"
+            className="flex items-center justify-center gap-2 px-5 py-2.5 border border-white/20 text-white text-sm rounded-xl hover:bg-white/10 transition-all duration-300 cursor-pointer font-medium"
           >
             <ArrowLeft className="w-4 h-4" />
             Go Back
           </button>
           <button
             onClick={handleReturnHome}
-            className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black font-bold rounded-xl hover:shadow-[0_0_20px_rgba(252,196,9,0.4)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
+            className="flex items-center justify-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black text-sm font-bold rounded-xl hover:shadow-[0_0_20px_rgba(252,196,9,0.4)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
           >
             <Home className="w-4 h-4" />
             Return Home
