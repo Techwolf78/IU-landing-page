@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.avif";
 
 const certifications = [
   { id: 1, title: "Executive Programme on GST" },
@@ -70,25 +70,24 @@ const DomainCertifications = () => {
         </div>
 
         {/* ================= FIRST 8 CARDS ================= */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 px-4">
           {certifications.slice(0, 8).map((cert, index) => (
             <div
               key={cert.id}
-              className={`group relative rounded-full p-[2px]
+              className={`group relative rounded-2xl p-[1.5px]
               bg-gradient-to-r from-[#7A0C1E] via-[#5C1233] to-[#2A0F3F]
               hover:shadow-2xl transition-all duration-300
               ${inView ? "animate-slide-in-right" : "opacity-0 translate-x-16"}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div
-                className=" rounded-full w-full h-full
+                className="rounded-2xl w-full h-full
                 flex items-center justify-center text-center
-                p-4 min-h-[90px]
-                group-hover:scale-[1.03] transition-transform"
+                p-3 sm:p-4 min-h-[76px] sm:min-h-[90px]
+                group-hover:scale-[1.02] transition-transform"
               >
                 <h3
-                  className="text-sm sm:text-base font-semibold text-white
-                 "
+                  className="text-xs sm:text-sm md:text-base font-semibold text-white leading-tight"
                 >
                   {cert.title}
                 </h3>
@@ -98,26 +97,26 @@ const DomainCertifications = () => {
         </div>
 
         {/* ================= LAST 3 CARDS ================= */}
-        <div className="flex justify-center mt-6 md:mt-10 px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-4xl w-full">
+        <div className="flex justify-center mt-3 md:mt-10 px-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 max-w-4xl w-full">
             {certifications.slice(8).map((cert, index) => (
               <div
                 key={cert.id}
-                className={`group relative rounded-full p-[2px]
+                className={`group relative rounded-2xl p-[1.5px]
                 bg-gradient-to-r from-[#7A0C1E] via-[#5C1233] to-[#2A0F3F]
                 hover:shadow-2xl transition-all duration-300
+                ${index === 2 ? "col-span-2 sm:col-span-1" : ""}
                 ${inView ? "animate-slide-in-right" : "opacity-0 translate-x-16"}`}
                 style={{ animationDelay: `${(index + 8) * 0.1}s` }}
               >
                 <div
-                  className=" rounded-full w-full h-full
+                  className="rounded-2xl w-full h-full
                   flex items-center justify-center text-center
-                  p-4 min-h-[80px]
-                  group-hover:scale-[1.03] transition-transform"
+                  p-3 sm:p-4 min-h-[76px] sm:min-h-[90px]
+                  group-hover:scale-[1.02] transition-transform"
                 >
                   <h3
-                    className="text-sm sm:text-base font-semibold text-white
-                    "
+                    className="text-xs sm:text-sm md:text-base font-semibold text-white leading-tight"
                   >
                     {cert.title}
                   </h3>

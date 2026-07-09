@@ -4,66 +4,66 @@ import "react-toastify/dist/ReactToastify.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Images
-import marketingImage from "../../assets/one.jpg";
-import financialImage from "../../assets/two.jpg";
-import hrImage from "../../assets/three.jpg";
-import logisticsImage from "../../assets/four.jpg";
-import internationalBusinessImage from "../../assets/five.jpg";
-import bankingImage from "../../assets/six.jpg";
-import digitalMarketingImage from "../../assets/sev.jpg";
-import innovationImage from "../../assets/eight.jpg";
+import marketingImage from "../../assets/one.avif";
+import financialImage from "../../assets/two.avif";
+import hrImage from "../../assets/three.avif";
+import logisticsImage from "../../assets/four.avif";
+import internationalBusinessImage from "../../assets/five.avif";
+import bankingImage from "../../assets/six.avif";
+import digitalMarketingImage from "../../assets/sev.avif";
+import innovationImage from "../../assets/eight.avif";
 
 // Logos
-import logo1 from "../../assets/BBA – Marketing/logo/1.jpg";
-import logo2 from "../../assets/BBA – Marketing/logo/2.jpg";
-import logo3 from "../../assets/BBA – Marketing/logo/3.jpg";
-import logo4 from "../../assets/BBA – Marketing/logo/4.jpg";
-import logo5 from "../../assets/BBA – Marketing/logo/5.jpg";
-import logo6 from "../../assets/BBA – Marketing/logo/6.jpg";
-import logo7 from "../../assets/BBA – Marketing/logo/7.jpg";
-import logo8 from "../../assets/BBA – Marketing/logo/8.jpg";
-import logo9 from "../../assets/BBA – Marketing/logo/9.jpg";
-import logo10 from "../../assets/BBA – Marketing/logo/10.jpg";
-import logo11 from "../../assets/BBA – Finance/logo/1.jpg";
-import logo12 from "../../assets/BBA – Finance/logo/2.jpg";
-import logo13 from "../../assets/BBA – Finance/logo/3.jpg";
-import logo14 from "../../assets/BBA – Finance/logo/4.jpg";
-import logo15 from "../../assets/BBA – Finance/logo/5.jpg";
-import logo16 from "../../assets/BBA – Finance/logo/6.jpg";
-import logo17 from "../../assets/BBA – Finance/logo/7.jpg";
-import logo18 from "../../assets/BBA – Finance/logo/8.jpg";
-import logo19 from "../../assets/BBA – Finance/logo/9.jpg";
-import logo20 from "../../assets/BBA – Finance/logo/10.jpg";
-import logo21 from "../../assets/BBA International Business/logo/1.jpg";
-import logo22 from "../../assets/BBA International Business/logo/2.jpg";
-import logo23 from "../../assets/BBA International Business/logo/3.jpg";
-import logo24 from "../../assets/BBA International Business/logo/4.jpg";
-import logo25 from "../../assets/BBA International Business/logo/5.jpg";
-import logo26 from "../../assets/BBA International Business/logo/6.jpg";
-import logo27 from "../../assets/BBA International Business/logo/7.jpg";
-import logo28 from "../../assets/BBA International Business/logo/8.jpg";
-import logo29 from "../../assets/BBA International Business/logo/9.jpg";
-import logo30 from "../../assets/BBA International Business/logo/10.jpg";
-import logo31 from "../../assets/BBA HR/logo/1.jpg";
-import logo32 from "../../assets/BBA HR/logo/2.jpg";
-import logo33 from "../../assets/BBA HR/logo/3.jpg";
-import logo34 from "../../assets/BBA HR/logo/4.jpg";
-import logo35 from "../../assets/BBA HR/logo/5.jpg";
-import logo36 from "../../assets/BBA HR/logo/6.jpg";
-import logo37 from "../../assets/BBA HR/logo/7.jpg";
-import logo38 from "../../assets/BBA HR/logo/8.jpg";
-import logo39 from "../../assets/BBA HR/logo/9.jpg";
-import logo40 from "../../assets/BBA HR/logo/10.jpg";
-import logo41 from "../../assets/BBA Logistics & Supply Chain Management/logo/1.jpg";
-import logo42 from "../../assets/BBA Logistics & Supply Chain Management/logo/2.jpg";
-import logo43 from "../../assets/BBA Logistics & Supply Chain Management/logo/3.jpg";
-import logo44 from "../../assets/BBA Logistics & Supply Chain Management/logo/4.jpg";
-import logo45 from "../../assets/BBA Logistics & Supply Chain Management/logo/5.jpg";
-import logo46 from "../../assets/BBA Logistics & Supply Chain Management/logo/6.jpg";
-import logo47 from "../../assets/BBA Logistics & Supply Chain Management/logo/7.jpg";
-import logo48 from "../../assets/BBA Logistics & Supply Chain Management/logo/8.jpg";
-import logo49 from "../../assets/BBA Logistics & Supply Chain Management/logo/9.jpg";
-import logo50 from "../../assets/BBA Logistics & Supply Chain Management/logo/10.jpg";
+import logo1 from "../../assets/BBA – Marketing/logo/1.avif";
+import logo2 from "../../assets/BBA – Marketing/logo/2.avif";
+import logo3 from "../../assets/BBA – Marketing/logo/3.avif";
+import logo4 from "../../assets/BBA – Marketing/logo/4.avif";
+import logo5 from "../../assets/BBA – Marketing/logo/5.avif";
+import logo6 from "../../assets/BBA – Marketing/logo/6.avif";
+import logo7 from "../../assets/BBA – Marketing/logo/7.avif";
+import logo8 from "../../assets/BBA – Marketing/logo/8.avif";
+import logo9 from "../../assets/BBA – Marketing/logo/9.avif";
+import logo10 from "../../assets/BBA – Marketing/logo/10.avif";
+import logo11 from "../../assets/BBA – Finance/logo/1.avif";
+import logo12 from "../../assets/BBA – Finance/logo/2.avif";
+import logo13 from "../../assets/BBA – Finance/logo/3.avif";
+import logo14 from "../../assets/BBA – Finance/logo/4.avif";
+import logo15 from "../../assets/BBA – Finance/logo/5.avif";
+import logo16 from "../../assets/BBA – Finance/logo/6.avif";
+import logo17 from "../../assets/BBA – Finance/logo/7.avif";
+import logo18 from "../../assets/BBA – Finance/logo/8.avif";
+import logo19 from "../../assets/BBA – Finance/logo/9.avif";
+import logo20 from "../../assets/BBA – Finance/logo/10.avif";
+import logo21 from "../../assets/BBA International Business/logo/1.avif";
+import logo22 from "../../assets/BBA International Business/logo/2.avif";
+import logo23 from "../../assets/BBA International Business/logo/3.avif";
+import logo24 from "../../assets/BBA International Business/logo/4.avif";
+import logo25 from "../../assets/BBA International Business/logo/5.avif";
+import logo26 from "../../assets/BBA International Business/logo/6.avif";
+import logo27 from "../../assets/BBA International Business/logo/7.avif";
+import logo28 from "../../assets/BBA International Business/logo/8.avif";
+import logo29 from "../../assets/BBA International Business/logo/9.avif";
+import logo30 from "../../assets/BBA International Business/logo/10.avif";
+import logo31 from "../../assets/BBA HR/logo/1.avif";
+import logo32 from "../../assets/BBA HR/logo/2.avif";
+import logo33 from "../../assets/BBA HR/logo/3.avif";
+import logo34 from "../../assets/BBA HR/logo/4.avif";
+import logo35 from "../../assets/BBA HR/logo/5.avif";
+import logo36 from "../../assets/BBA HR/logo/6.avif";
+import logo37 from "../../assets/BBA HR/logo/7.avif";
+import logo38 from "../../assets/BBA HR/logo/8.avif";
+import logo39 from "../../assets/BBA HR/logo/9.avif";
+import logo40 from "../../assets/BBA HR/logo/10.avif";
+import logo41 from "../../assets/BBA Logistics & Supply Chain Management/logo/1.avif";
+import logo42 from "../../assets/BBA Logistics & Supply Chain Management/logo/2.avif";
+import logo43 from "../../assets/BBA Logistics & Supply Chain Management/logo/3.avif";
+import logo44 from "../../assets/BBA Logistics & Supply Chain Management/logo/4.avif";
+import logo45 from "../../assets/BBA Logistics & Supply Chain Management/logo/5.avif";
+import logo46 from "../../assets/BBA Logistics & Supply Chain Management/logo/6.avif";
+import logo47 from "../../assets/BBA Logistics & Supply Chain Management/logo/7.avif";
+import logo48 from "../../assets/BBA Logistics & Supply Chain Management/logo/8.avif";
+import logo49 from "../../assets/BBA Logistics & Supply Chain Management/logo/9.avif";
+import logo50 from "../../assets/BBA Logistics & Supply Chain Management/logo/10.avif";
 
 // MUI
 import Box from "@mui/material/Box";
@@ -233,7 +233,7 @@ const specializations = [
     logos: [logo41, logo42, logo43, logo44, logo45, logo46, logo47, logo48, logo49, logo50],
     showGlobalComponents: false,
   },
-  {
+  /* {
     name: "Global Immersion Programme",
     duration: "3 Years",
     fees: "Year 1: ₹3,50,000 | Year 2 & 3: ₹1,75,000/year",
@@ -265,7 +265,7 @@ const specializations = [
       ],
       importantNote: "Food expenses during the South Korea internship are to be borne by the student, allowing flexibility in dining choices."
     }
-  },
+  }, */
 ];
 
 function BbaAdmissionCourses() {
@@ -314,19 +314,19 @@ function BbaAdmissionCourses() {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
         {/* LEFT LIST */}
-        <div className="md:col-span-4 flex md:flex-col md:gap-8 overflow-x-auto md:overflow-visible pb-2">
+        <div className="md:col-span-4 flex md:flex-col md:gap-4 overflow-x-auto md:overflow-visible pb-2 scrollbar-none">
           {specializations.map((item, index) => {
             const active = index === selectedIndex;
             return (
               <div
                 key={index}
                 onClick={() => setSelectedIndex(index)}
-                className={`whitespace-nowrap px-5 py-3 rounded-full cursor-pointer transition ${
+                className={`whitespace-nowrap px-4 py-2 md:px-5 md:py-3 rounded-full cursor-pointer transition text-sm md:text-lg ${
                   active
-                    ? "bg-[#fcc409] font-semibold"
-                    : "text-gray-600 hover:text-black text-lg"
+                    ? "bg-[#fcc409] font-semibold text-black"
+                    : "text-gray-600 hover:text-black"
                 }`}
               >
                 {item.name}
@@ -350,20 +350,20 @@ function BbaAdmissionCourses() {
               </h3>
 
               <div className="flex flex-wrap gap-3 mb-5">
-                <span className="bg-gray-100 px-4 py-1 rounded-lg text-sm">
+                <span className="bg-gray-100 px-4 py-1 rounded-lg text-xs sm:text-sm">
                   Duration: {current.duration}
                 </span>
-                <span className="bg-gray-100 px-4 py-1 rounded-lg text-sm">
+                <span className="bg-gray-100 px-4 py-1 rounded-lg text-xs sm:text-sm">
                   Fees: {current.fees}
                 </span>
               </div>
 
-              <p className="text-gray-700 leading-7 m-1">{current.description}</p>
+              <p className="text-gray-700 leading-7 m-1 text-sm sm:text-base">{current.description}</p>
 
               {/* Global Immersion Programme Components */}
               {current.showGlobalComponents && (
                 <div className="mb-8">
-                  <h4 className="font-semibold text-xl mb-4 text-[#b1124a]">
+                  <h4 className="font-semibold text-lg sm:text-xl mb-4 text-[#b1124a]">
                     {current.globalComponents.title}
                   </h4>
                   
@@ -373,7 +373,7 @@ function BbaAdmissionCourses() {
                       {current.globalComponents.items.map((item, idx) => (
                         <span
                           key={idx}
-                          className="bg-[#b1124a]/10 px-3 py-1 rounded-full text-sm"
+                          className="bg-[#b1124a]/10 px-3 py-1 rounded-full text-xs sm:text-sm"
                         >
                           {item}
                         </span>
@@ -383,14 +383,14 @@ function BbaAdmissionCourses() {
 
                   {/* What's Included */}
                   <div className="mb-6">
-                    <h5 className="font-semibold text-lg mb-2">
+                    <h5 className="font-semibold text-base sm:text-lg mb-2">
                       What's Included in Global Immersion Fee?
                     </h5>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
                       {current.globalComponents.included.map((item, idx) => (
                         <div key={idx} className="flex items-start gap-2">
                           <span className="text-green-600 font-bold mt-1">✔</span>
-                          <span className="text-sm sm:text-base">{item}</span>
+                          <span className="text-xs sm:text-sm md:text-base">{item}</span>
                         </div>
                       ))}
                     </div>
@@ -398,7 +398,7 @@ function BbaAdmissionCourses() {
 
                   {/* Important Note */}
                   <div className="bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded-md">
-                    <p className="text-sm text-gray-700">
+                    <p className="text-xs sm:text-sm text-gray-700">
                       <span className="font-semibold">Important Note:</span> {current.globalComponents.importantNote}
                     </p>
                   </div>
@@ -408,10 +408,10 @@ function BbaAdmissionCourses() {
               <div className="mb-10">
                 {/* CAREER OPPORTUNITIES – TOP */}
                 <div className="mb-8">
-                  <h4 className="font-semibold mb-4 text-[#b1124a]">
+                  <h4 className="font-semibold mb-4 text-[#b1124a] text-base sm:text-lg">
                     Career Opportunities
                   </h4>
-                  <ul className="grid grid-cols-2 sm:grid-cols-2 gap-2">
+                  <ul className="grid grid-cols-2 gap-2 text-xs sm:text-sm md:text-base">
                     {current.careerOutcomes.map((c, i) => (
                       <li key={i} className="flex gap-2 items-center">
                         ✔ {c}
@@ -421,7 +421,7 @@ function BbaAdmissionCourses() {
                 </div>
 
                 {/* TOP RECRUITERS */}
-                <h4 className="font-semibold mb-4 text-[#b1124a]">
+                <h4 className="font-semibold mb-4 text-[#b1124a] text-base sm:text-lg">
                   Recruiters for {current.name}
                 </h4>
                 <div className="overflow-hidden relative">
@@ -448,7 +448,7 @@ function BbaAdmissionCourses() {
                                     <img
                                       src={logo}
                                       alt={`recruiter-${slideIndex}-${idx}`}
-                                      className="h-12 object-contain"
+                                      className="h-8 md:h-12 object-contain"
                                     />
                                   </div>
                                 ))}
@@ -476,17 +476,17 @@ function BbaAdmissionCourses() {
                       )}
                     </div>
                   ) : (
-                    // ✅ NORMAL COURSES → STATIC GRID
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                    // ✅ NORMAL COURSES → RESPONSIVE ROW / GRID
+                    <div className="flex md:grid md:grid-cols-5 overflow-x-auto md:overflow-visible gap-3 pb-2 scrollbar-none">
                       {current.logos.map((logo, index) => (
                         <div
                           key={index}
-                          className="flex justify-center items-center border rounded-xl border-gray-300 px-4 py-2 bg-white"
+                          className="flex-shrink-0 w-28 md:w-auto flex justify-center items-center border rounded-xl border-gray-300 px-3 py-2 bg-white"
                         >
                           <img
                             src={logo}
                             alt={`recruiter-${index}`}
-                            className="h-12 object-contain"
+                            className="h-8 md:h-12 object-contain"
                           />
                         </div>
                       ))}
@@ -497,7 +497,7 @@ function BbaAdmissionCourses() {
 
               <button
                 onClick={() => setOpen(true)}
-                className="w-full bg-[#b1124a] text-white py-3 rounded-lg font-semibold hover:bg-[#90103d] transition-colors"
+                className="w-full bg-[#b1124a] text-white py-3 rounded-lg font-semibold hover:bg-[#90103d] transition-colors text-sm sm:text-base"
               >
                 Apply Now for {current.name}
               </button>

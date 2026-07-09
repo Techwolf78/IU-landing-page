@@ -1,19 +1,35 @@
 import { useEffect, useState, useRef } from "react";
-import img1 from "../../assets/event2.jpg";
-import img2 from "../../assets/event3.jpg";
-import img3 from "../../assets/event5.jpg";
-import img4 from "../../assets/event4.jpg";
-import img5 from "../../assets/event1.jpg";
-import img6 from "../../assets/facilities2.jpg";
-import img7 from "../../assets/facilities3.jpg";
-import img8 from "../../assets/facilities5.jpg";
-import img9 from "../../assets/facilities4.jpg";
-import img10 from "../../assets/facilities1.jpg";
-import img11 from "../../assets/club2.jpg";
-import img12 from "../../assets/club3.jpg";
-import img13 from "../../assets/club5.jpg";
-import img14 from "../../assets/club4.jpg";
-import img15 from "../../assets/club1.jpg";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import NPFWidget from "../NPFWidget";
+
+import img1 from "../../assets/event2.avif";
+import img2 from "../../assets/event3.avif";
+import img3 from "../../assets/event5.avif";
+import img4 from "../../assets/event4.avif";
+import img5 from "../../assets/event1.avif";
+import img6 from "../../assets/facilities2.avif";
+import img7 from "../../assets/facilities3.avif";
+import img8 from "../../assets/facilities5.avif";
+import img9 from "../../assets/facilities4.avif";
+import img10 from "../../assets/facilities1.avif";
+import img11 from "../../assets/club2.avif";
+import img12 from "../../assets/club3.avif";
+import img13 from "../../assets/club5.avif";
+import img14 from "../../assets/club4.avif";
+import img15 from "../../assets/club1.avif";
+
+const modalStyle = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 420,
+  bgcolor: "background.paper",
+  boxShadow: 24,
+  p: 3,
+  borderRadius: "12px",
+};
 
 const data = [
   {
@@ -45,8 +61,8 @@ const data = [
 export default function CampusFacilities() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [open, setOpen] = useState(false);
   const sectionRef = useRef(null);
-  const isScrollingRef = useRef(false);
 
   // Detect screen size properly
   useEffect(() => {
@@ -58,38 +74,36 @@ export default function CampusFacilities() {
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
-  // Smooth desktop wheel scroll
+  // Track scroll position to change slides naturally without scroll-hijacking
   useEffect(() => {
     if (!isDesktop) return;
 
-    const handleWheel = (e) => {
-      if (!sectionRef.current || isScrollingRef.current) return;
-
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
-
-      if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
-        e.preventDefault();
-
-        let newIndex = activeIndex;
-        if (e.deltaY > 0) {
-          newIndex = Math.min(data.length - 1, activeIndex + 1);
-        } else {
-          newIndex = Math.max(0, activeIndex - 1);
-        }
-
-        if (newIndex !== activeIndex) {
-          isScrollingRef.current = true;
-          setActiveIndex(newIndex);
-          setTimeout(() => {
-            isScrollingRef.current = false;
-          }, 700);
-        }
+      const viewHeight = window.innerHeight;
+      
+      // Calculate how far the section has scrolled relative to the viewport
+      const totalScrollableHeight = rect.height - viewHeight;
+      const currentScroll = -rect.top;
+      
+      if (currentScroll >= 0 && currentScroll <= totalScrollableHeight) {
+        // Calculate progress ratio (from 0 to 1)
+        const progress = currentScroll / totalScrollableHeight;
+        
+        // Map progress to active index (0 to data.length - 1)
+        const rawIndex = Math.floor(progress * data.length);
+        const newIndex = Math.max(0, Math.min(data.length - 1, rawIndex));
+        
+        setActiveIndex(newIndex);
       }
     };
 
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    return () => window.removeEventListener("wheel", handleWheel);
-  }, [activeIndex, isDesktop]);
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Set initial state
+    
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isDesktop]);
 
   return (
     <section
@@ -101,36 +115,42 @@ export default function CampusFacilities() {
     >
       {/* ================= DESKTOP ================= */}
       {isDesktop && (
-        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden px-6">
-          <div className="container mx-auto w-full max-w-7xl relative">
+        <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden px-6 py-6">
+          {/* Main Section Header */}
+          <div className="text-center mb-4 z-30">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white">
+              Campus <span className="text-[#FCC409]">Highlights</span>
+            </h2>
+          </div>
+
+          <div className="container mx-auto w-full max-w-7xl relative flex-grow flex items-center">
             {data.map((item, index) => (
               <div
                 key={item.id}
-                className={`transition-all duration-700 ${
+                className={`transition-all duration-700 w-full ${
                   activeIndex === index
                     ? "opacity-100"
                     : "opacity-0 absolute inset-0 pointer-events-none"
                 }`}
               >
-                <div className="flex items-center justify-between gap-8 min-h-[70vh]">
+                <div className="flex items-center justify-between gap-8 min-h-[60vh]">
                   {/* Content */}
                   <div className="w-5/12">
-                    <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black text-sm font-semibold rounded-full mb-4 shadow-lg">
-                      Campus Highlights
-                    </span>
-
-                    <h2 className="text-5xl font-bold mb-4 text-white">
+                    <h2 className="text-4xl font-bold mb-3 text-white">
                       {item.title}
                     </h2>
 
-                    <div className="w-24 h-1 bg-gradient-to-r from-[#FCC409] to-[#FFD700] mb-6 rounded-full"></div>
+                    <div className="w-20 h-1 bg-gradient-to-r from-[#FCC409] to-[#FFD700] mb-5 rounded-full"></div>
 
-                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-xl">
-                      <p className="text-lg text-white/90 leading-relaxed mb-6">
+                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 shadow-xl">
+                      <p className="text-base lg:text-lg text-white/90 leading-relaxed mb-6">
                         {item.description}
                       </p>
 
-                      <button className="px-6 py-3 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black font-semibold rounded-lg shadow-lg">
+                      <button
+                        onClick={() => setOpen(true)}
+                        className="px-6 py-3 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black font-semibold rounded-lg shadow-lg"
+                      >
                         Learn More
                       </button>
                     </div>
@@ -139,15 +159,23 @@ export default function CampusFacilities() {
                   {/* Images */}
                   <div className="w-7/12 space-y-4">
                     <div className="flex gap-4">
-                      <img src={item.images[0]} className="w-1/2 h-40 object-cover rounded-xl" />
-                      <img src={item.images[1]} className="w-1/2 h-40 object-cover rounded-xl" />
+                      <img src={item.images[0]} className="w-1/2 h-36 object-cover rounded-xl" />
+                      <img src={item.images[1]} className="w-1/2 h-36 object-cover rounded-xl" />
                     </div>
 
-                    <img src={item.images[2]} className="w-full h-60 object-cover rounded-2xl" />
+                    <img
+                      src={item.images[2]}
+                      className="w-full h-52 object-cover rounded-2xl"
+                      style={{ objectPosition: 'top' }}
+                    />
 
                     <div className="flex gap-4">
-                      <img src={item.images[3]} className="w-1/2 h-40 object-cover rounded-xl" />
-                      <img src={item.images[4]} className="w-1/2 h-40 object-cover rounded-xl" />
+                      <img src={item.images[3]} className="w-1/2 h-36 object-cover rounded-xl" />
+                      <img
+                        src={item.images[4]}
+                        className="w-1/2 h-36 object-cover rounded-xl"
+                        style={item.id === 1 ? { objectPosition: 'top' } : undefined}
+                      />
                     </div>
                   </div>
                 </div>
@@ -159,48 +187,61 @@ export default function CampusFacilities() {
 
       {/* ================= MOBILE ================= */}
       {!isDesktop && (
-        <div className="container mx-auto px-4 space-y-16">
+        <div className="container mx-auto px-4 py-6 space-y-12">
+          {/* Main Section Header */}
+          <div className="text-center mb-6">
+            <h2 className="text-3xl font-bold text-white">
+              Campus <span className="text-[#FCC409]">Highlights</span>
+            </h2>
+          </div>
+
           {data.map((item) => (
-            <div key={item.id} className="flex flex-col gap-6">
+            <div key={item.id} className="flex flex-col gap-5">
               <div>
-                <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black text-sm font-semibold rounded-full mb-4 shadow-lg">
-                  Campus Highlights
-                </span>
-
-                <h2 className="text-3xl font-bold mb-4 text-white">
+                <h3 className="text-2xl font-bold mb-3 text-white">
                   {item.title}
-                </h2>
+                </h3>
 
-                <div className="w-20 h-1 bg-gradient-to-r from-[#FCC409] to-[#FFD700] mb-6 rounded-full"></div>
+                <div className="w-16 h-1 bg-gradient-to-r from-[#FCC409] to-[#FFD700] mb-4 rounded-full"></div>
 
                 <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10 shadow-xl">
-                  <p className="text-base text-white/90 leading-relaxed mb-4">
+                  <p className="text-sm text-white/90 leading-relaxed mb-4">
                     {item.description}
                   </p>
 
-                  <button className="w-full px-5 py-2.5 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black font-semibold rounded-lg shadow-lg">
+                  <button
+                    onClick={() => setOpen(true)}
+                    className="w-full px-5 py-2.5 bg-gradient-to-r from-[#FCC409] to-[#FFD700] text-black font-semibold rounded-lg shadow-lg"
+                  >
                     Learn More
                   </button>
                 </div>
               </div>
 
-              <div className="space-y-4">
-                <div className="flex gap-3">
-                  <img src={item.images[0]} className="w-1/2 h-32 object-cover rounded-lg" />
-                  <img src={item.images[1]} className="w-1/2 h-32 object-cover rounded-lg" />
-                </div>
-
-                <img src={item.images[2]} className="w-full h-44 object-cover rounded-xl" />
-
-                <div className="flex gap-3">
-                  <img src={item.images[3]} className="w-1/2 h-32 object-cover rounded-lg" />
-                  <img src={item.images[4]} className="w-1/2 h-32 object-cover rounded-lg" />
-                </div>
+              <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-none">
+                {item.images.map((img, idx) => {
+                  const isTargetImage = idx === 2 || (item.id === 1 && idx === 4);
+                  return (
+                    <img
+                      key={idx}
+                      src={img}
+                      alt={`${item.title}-${idx}`}
+                      className="w-48 h-32 flex-shrink-0 object-cover rounded-lg shadow-md"
+                      style={isTargetImage ? { objectPosition: 'top' } : undefined}
+                    />
+                  );
+                })}
               </div>
             </div>
           ))}
         </div>
       )}
+      {/* Modal */}
+      <Modal open={open} onClose={() => setOpen(false)}>
+        <Box sx={modalStyle}>
+          <NPFWidget />
+        </Box>
+      </Modal>
     </section>
   );
 }

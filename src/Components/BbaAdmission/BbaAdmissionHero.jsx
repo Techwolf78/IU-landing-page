@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import backgroundImage2 from "../../assets/IUBanner.jpg";
+import backgroundImage2 from "../../assets/IUBanner.avif";
 import NPFWidget from "../NPFWidget";
 
 function CompHero() {
@@ -35,34 +35,30 @@ function CompHero() {
 
   return (
     <div
-      className="relative min-h-[90vh]  bg-cover bg-center bg-no-repeat text-white"
+      className="relative min-h-[90vh] bg-cover bg-center bg-no-repeat text-white py-12 md:py-0 flex items-center"
       style={{ backgroundImage: `url(${backgroundImage2})` }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-10"></div>
+      <div className="absolute inset-0 bg-black/50 z-10"></div>
 
       {/* Content */}
-      <div className="relative z-20 flex min-h-[90vh] flex-col md:flex-row items-center justify-center px-4 sm:px-8 md:px-16 gap-10">
+      <div className="relative z-20 flex w-full flex-col md:flex-row items-center justify-center px-4 sm:px-8 md:px-16 gap-8 md:gap-10">
         {/* LEFT TEXT */}
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-          <h1 className="text-[32px] sm:text-[42px] md:text-[50px] lg:text-[60px] font-semibold">
-            <span className="text-[#FCC409]">BBA</span> at Indira University
-            Pune
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <span className="text-[#FCC409]">BBA</span> at Indira University Pune
           </h1>
-          <p className="md:text-2xl">
-            <span className=" text-4px font-bold">
-              {" "}
-              31 Years of Legacy Giving You the Education You Can Trust <br />
-            </span>
+          <p className="mt-3 text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-200">
+            31 Years of Legacy Giving You the Education You Can Trust
           </p>
-          <p className="mt-6 text-base sm:text-lg md:text-xl bg-[#FCC409] text-black  px-2 md:px-6 rounded-xl inline-block">
-            Admissions Open for 2026-27{" "}
+          <p className="mt-4 text-xs sm:text-sm md:text-base border border-[#FCC409]/40 bg-[#FCC409]/15 text-[#FCC409] px-3 py-1 font-bold rounded-md inline-block uppercase tracking-wider">
+            Admissions Open for 2026-27
           </p>
         </div>
 
         {/* RIGHT FORM */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-          <div className="w-full max-w-md bg-black/40 p-6 rounded-xl shadow-lg">
+          <div className="w-full max-w-md bg-black/40 p-4 sm:p-6 rounded-xl shadow-lg border border-white/10 backdrop-blur-sm">
             <NPFWidget />
           </div>
         </div>

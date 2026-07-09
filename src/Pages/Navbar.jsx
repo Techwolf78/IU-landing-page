@@ -1,7 +1,7 @@
 import React from "react";
 
 // Import images
-import logo from "../assets/IULogo.png";
+import logo from "../assets/IULogo.avif";
 
 function Navbar() {
   const pulseKeyframes = `
@@ -25,28 +25,22 @@ function Navbar() {
       <nav className="bg-gray-900 shadow-lg w-full">
         {/* Mobile/Tablet Layout (md se chhota) */}
         <div className="md:hidden">
-          <div className="flex flex-col items-center py-3 px-4">
-            
-            {/* Top Row - Logos */}
-            <div className="flex justify-between w-full items-center mb-2">
-              {/* Left Logo */}
-              <div className="flex-shrink-0">
-                <a href="/">
-                  <img
-                    src={logo}
-                    alt="Left Logo"
-                    className="h-auto w-20"
-                  />
-                </a>
-              </div>
-
-          
+          <div className="relative flex items-center justify-center py-3 px-4 min-h-[64px]">
+            {/* Left Logo (Absolutely Positioned) */}
+            <div className="absolute left-4 flex-shrink-0">
+              <a href="/">
+                <img
+                  src={logo}
+                  alt="Left Logo"
+                  className="h-auto w-20"
+                />
+              </a>
             </div>
 
             {/* Center Text - Mobile */}
-            <div className="text-center w-full">
-              <h1 className="text-white text-xl font-bold animate-pulseText px-2 leading-tight">
-                  SCHOOL OF BUSINESS<br />(INDIRA UNIVERSITY)
+            <div className="text-center mx-auto px-20">
+              <h1 className="text-white text-sm sm:text-base font-bold animate-pulseText leading-tight">
+                SCHOOL OF BUSINESS<br />(INDIRA UNIVERSITY)
               </h1>
             </div>
           </div>

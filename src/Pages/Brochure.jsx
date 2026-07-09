@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import brochureImage from "../assets/Images/3d-brochure.png";
+import brochureImage from "../assets/Images/3d-brochure.avif";
 import { FaRegCommentDots, FaTimes } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

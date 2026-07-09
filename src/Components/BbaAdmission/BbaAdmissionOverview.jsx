@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Image1 from "../../assets/Building.jpg";
+import Image1 from "../../assets/Building.avif";
 
 // AOS
 import AOS from "aos";
@@ -59,7 +59,7 @@ function BbaAdmissionOverview() {
   return (
     <div className="flex flex-col overflow-hidden">
       {/* ================= HERO SECTION ================= */}
-      <div className="relative w-full px-6 md:px-16 py-10 poppins-regular">
+      <div className="relative w-full px-4 sm:px-8 md:px-16 py-10 md:py-16 poppins-regular">
         {/* Background Image (Desktop & Tablet only) */}
         <div
           className="hidden md:block absolute inset-0 bg-right bg-no-repeat bg-contain"
@@ -67,28 +67,28 @@ function BbaAdmissionOverview() {
         />
 
         {/* Overlay */}
-        <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#7A0C1E] via-[#5C1233] to-[#2A0F3F] to-transparent" />
+        <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#7A0C1E] via-[#5C1233] to-transparent" />
 
         {/* Content */}
         <div
-          className="relative z-10 md:w-2/3 text-[#011E5A] md:text-white"
+          className="relative z-10 md:w-2/3 text-[#011E5A] md:text-white text-center md:text-left"
           data-aos="fade-right"
         >
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-5 leading-tight">
             Top BBA College in{" "}
-            <span className="text-[#FECD46] md:text-[#FECD46]">
+            <span className="text-[#b1124a] md:text-[#FECD46]">
               India
             </span>
           </h1>
 
-          <p className="text-base md:text-lg text-gray-700 md:text-gray-200 mb-4 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 md:text-gray-200 mb-4 leading-relaxed">
             Indira University – SOB Pune stands among the{" "}
-              top BBA colleges in India
+            <span className="font-semibold md:text-white">top BBA colleges in India</span>
             , offering an industry-curated curriculum under the Bachelor of
             Business Administration (BBA) programme.
           </p>
 
-          <p className="text-base md:text-lg text-gray-700 md:text-gray-200 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 md:text-gray-200 leading-relaxed">
             Designed for aspiring students, entrepreneurs, and
             management professionals, our BBA course after 12th provides the
             perfect foundation for future.
@@ -96,11 +96,11 @@ function BbaAdmissionOverview() {
         </div>
 
         {/* Mobile Image */}
-        <div className="block md:hidden mt-6">
+        <div className="block md:hidden mt-8 max-w-md mx-auto rounded-xl overflow-hidden shadow-lg">
           <img
             src={Image1}
             alt="BBA Programme"
-            className="w-full h-[240px] object-container  shadow-md"
+            className="w-full h-[200px] sm:h-[260px] object-cover"
           />
         </div>
       </div>
@@ -111,23 +111,22 @@ function BbaAdmissionOverview() {
           Why Choose Us?
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
           {cardData.map((item, index) => (
             <div
               key={index}
-              className="bg-[#011E5A] p-5 rounded-xl relative
+              className="bg-[#011E5A] p-4 sm:p-5 rounded-xl relative
                          transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
               <item.icon
-                size={42}
-                className="text-[#FECD46] mb-4 icon"
+                className="text-[#FECD46] mb-3 sm:mb-4 icon text-2xl sm:text-4xl"
               />
 
-              <p className="text-white font-semibold text-base md:text-lg">
+              <p className="text-white font-semibold text-xs sm:text-sm md:text-base">
                 {item.title}
               </p>
 
-              <div className="circle absolute -bottom-4 -right-4 w-10 h-10 bg-white rounded-full shadow-lg" />
+              <div className="circle absolute -bottom-4 -right-4 w-10 h-10 bg-white rounded-full shadow-lg opacity-0" />
             </div>
           ))}
         </div>

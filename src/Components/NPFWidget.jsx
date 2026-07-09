@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 const NPFWidget = () => {
   useEffect(() => {
@@ -16,7 +16,7 @@ const NPFWidget = () => {
   return (
     <div
       className="npf_wgts"
-      data-height="450px"
+      data-height="500px"
       data-w="fa696c7c8f761369fe613b07551b1bf3"
     ></div>
   );
