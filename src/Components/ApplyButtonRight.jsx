@@ -13,11 +13,14 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
+  width: { xs: '90%', sm: 400 },
+  maxHeight: '90vh',
+  overflowY: 'auto',
+  bgcolor: '#ffffff',
+  borderRadius: '16px',
+  boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.15)',
+  p: 1.5,
+  outline: 'none',
 };
 
 function ApplyNowButton() {
@@ -57,8 +60,23 @@ function ApplyNowButton() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-< NPFWidget />
-          
+          <div className="flex justify-between items-center mb-3 px-2">
+            <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ fontWeight: 'bold', color: '#011E5A' }}>
+              Admissions Open 2026
+            </Typography>
+            <button
+              onClick={handleClose}
+              className="text-gray-500 hover:text-gray-700 focus:outline-none"
+              aria-label="Close modal"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+          <div style={{ maxHeight: '75vh', overflow: 'hidden' }}>
+            <NPFWidget />
+          </div>
         </Box>
       </Modal>
 

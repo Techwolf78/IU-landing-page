@@ -148,7 +148,7 @@ function Footer() {
                   Our Schools
                 </a>
                 <a
-                  href="https://www.indirauniversity.edu.in/admissions#"
+                  href="https://indirauniversity.edu.in/privacypolicy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-gray-600 hover:text-gray-400 text-lg"
@@ -156,7 +156,7 @@ function Footer() {
                   Privacy Policy
                 </a>
                 <a
-                  href="https://www.indirauniversity.edu.in/admissions#"
+                  href="https://indirauniversity.edu.in/terms-conditions-indira-university"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-gray-600 hover:text-gray-400 text-lg"

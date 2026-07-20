@@ -4,6 +4,7 @@ import Navbar from "./Pages/Navbar";
 import Footer from "./Pages/Footer";
 import ApplyButtonRight from "./Components/ApplyButtonRight";
 import LoadingSpinner from "./Components/LoadingSpinner";
+import ScrollToTop from "./Components/ScrollToTop";
 
 // Lazy loading page-level components
 const BbaAdmission = lazy(() => import("./Pages/BbaAdmission"));
@@ -15,6 +16,7 @@ function App() {
     <Router>
       <div style={{ fontFamily: "Helvetica Neue Black, sans-serif" }}>
         <ApplyButtonRight />
+        <ScrollToTop />
         <main>
           <Navbar />
           <Suspense fallback={<LoadingSpinner />}>
