@@ -16,25 +16,7 @@ const ThankYou = () => {
       metaDesc.content = "Thank you for your interest in Indira University Pune BBA programs. Your inquiry has been successfully submitted.";
     }
 
-    // 2. Append Google Ads conversion scripts dynamically
-    const script1 = document.createElement("script");
-    script1.async = true;
-    script1.src = "https://www.googletagmanager.com/gtag/js?id=AW-16977491177";
-    document.head.appendChild(script1);
-
-    const script2 = document.createElement("script");
-    script2.innerHTML = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-16977491177');
-      gtag('event', 'conversion', {
-        'send_to': 'AW-16977491177/Y_6BCM_mk7YaEOnpv58_'
-      });
-    `;
-    document.head.appendChild(script2);
-
-    // 3. Setup redirect timer
+    // 2. Setup redirect timer
     const timer = setInterval(() => {
       setCountdown((prev) => {
         if (prev <= 1) {
@@ -45,16 +27,30 @@ const ThankYou = () => {
       });
     }, 1000);
 
-    // Cleanup scripts and restore original metadata on unmount
+    // Restore original metadata on unmount
     return () => {
       clearInterval(timer);
       if (metaDesc) {
         metaDesc.content = originalDesc;
       }
-      if (document.head.contains(script1)) document.head.removeChild(script1);
-      if (document.head.contains(script2)) document.head.removeChild(script2);
     };
   }, [navigate]);
+
+  useEffect(() => {
+    // Ensure gtag is initialized and push the conversion event
+    window.dataLayer = window.dataLayer || [];
+    const gtag = window.gtag || function() {
+      window.dataLayer.push(arguments);
+    };
+    if (!window.gtag) {
+      window.gtag = gtag;
+    }
+    
+    // Fire Google Ads conversion tracking event
+    window.gtag('event', 'conversion', {
+      'send_to': 'AW-16977491177/Y_6BCM_mk7YaEOnpv58_'
+    });
+  }, []);
 
   const handleGoBack = () => {
     window.history.back();

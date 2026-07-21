@@ -21,10 +21,10 @@ function App() {
           <Navbar />
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>
-              {/* Define routes for all the pages */}
               <Route path="/" element={<BbaAdmission />} />
-              <Route path="*" element={<NotFoundPage />} />
               <Route path="/thankyou" element={<ThankYou />} />
+              <Route path="/thank-you" element={<ThankYou />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
           <Footer />
