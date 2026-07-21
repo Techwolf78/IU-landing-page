@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CheckCircle2, ArrowLeft, Home, Calendar } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 
 const ThankYou = () => {
   const navigate = useNavigate();
@@ -61,7 +62,11 @@ const ThankYou = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#021844] via-[#052968] to-[#0a1128] overflow-hidden px-4">
+    <>
+      <Helmet>
+        <link rel="canonical" href="https://bba-sob.indirauniversity.edu.in/thankyou" />
+      </Helmet>
+      <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#021844] via-[#052968] to-[#0a1128] overflow-hidden px-4">
       {/* Decorative background glow elements */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-[#FCC409]/5 rounded-full blur-[120px] pointer-events-none" />
@@ -112,6 +117,7 @@ const ThankYou = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
