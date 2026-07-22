@@ -28,11 +28,14 @@ const NPFWidget = () => {
     };
   }, []);
 
+  const redirectUrl = encodeURIComponent("https://bba-sob.indirauniversity.edu.in/thankyou");
+
   return (
     <div
       className="npf_wgts"
       data-height={height}
       data-w="485adad5d85a233b731dd5cc763e58ba"
+      data-r={redirectUrl}
       style={{ minHeight: height }}
     ></div>
   );
